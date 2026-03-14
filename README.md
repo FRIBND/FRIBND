@@ -1,54 +1,48 @@
-# FRIBND AI Agent for ENSDF
+**AI-Assisted Nuclear Data Technical Innovation at FRIB**
 
-## Overview
-The first AI agent dedicated to Evaluated Nuclear Structure Data File (ENSDF) 80-column formatting has been developed and refined through daily evaluation tasks at the Facility for Rare Isotope Beams (FRIB) Nuclear Data Group. 
+**`FRIBND` AI Agent:**
+The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) 80-column formatting has been developed and refined through daily evaluation tasks at the Facility for Rare Isotope Beams (FRIB) Nuclear Data Group.
 
-Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, these tools integrate rapidly evolving Large Language Models (LLMs) into the routine workflows of ENSDF evaluators. The tools were first introduced at the 2025 Low Energy Community Meeting and are available and customizable to support the broader nuclear data community.
+Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, FRIBND integrates rapidly evolving Large Language Models (LLMs) into the routine workflows of ENSDF evaluators. FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting and 2025 U.S. Nuclear Data Program Meeting and is available and customizable to support the broader nuclear data community.
 
-## AI/ML Implementation & Context Management
-The implementation incorporates ENSDF-specific context management for AI using three key components. These components are assembled with GitHub Copilot base instructions to ensure all AI actions comply with strict ENSDF 80-column standards.
+#### FRIBND AI Agent Architecture
 
-*   **FRIBND Custom Agent:** Defines core behavior, tool invocation, and structured agentic workflows:
-    *   *Workflow:* Understand $\rightarrow$ Investigate $\rightarrow$ Plan $\rightarrow$ Implement $\rightarrow$ Debug $\rightarrow$ Test $\rightarrow$ Iterate $\rightarrow$ Validate
-*   **Repository Custom Instructions:** Defines ENSDF 80-column format rules, notation standards, and quality assurance measures.
-*   **Specialized Agent Skills:** Provides tailored expertise for specific tasks, including automated data extraction from publications (utilizing built-in vision capabilities) and precise data entry alignment.
+**Context Engineering**
+*   **Custom Instructions:** Rules, Standards, Conventions, Guidelines, Guardrails.
+*   **Custom Agents:** Persona, Role, Behavior, Tools.
+*   **Subagents:** Handoffs, Guided Sequential Workflows.
+*   **Reusable Prompts:** Commands, Specific Tasks, Standardized Workflows.
+*   **Agent Skills:** Portable and Interoperable Capabilities across Agents, Scripts, Templates, Examples, Reference Docs, Dynamic Loading Resources.
 
----
-
-## FRIBND AI Agent Architecture
-
-### Context Engineering
-*   **Custom Instructions:** Rules, standards, conventions, guidelines, and guardrails.
-*   **Custom Agents:** Persona, role, behavior, and tools.
-*   **Subagents:** Handoffs and guided sequential workflows.
-*   **Reusable Prompts:** Commands, specific tasks, and standardized workflows.
-*   **Agent Skills:** Portable and interoperable capabilities across agents, scripts, templates, examples, reference documentation, and resources.
-
-### Semantic Structuring
-Semantic structuring (Role Assignment & Tag Wrapping) organizes context across four primary message types. This framework ensures clear communication between the user, the AI, and the tools.
+**Semantic Structuring**
+(Role Assignment & Tag Wrapping) organizes the context across four primary types: System Messages, User Messages, Assistant Messages, and Tool Messages. This framework ensures clear communication between the user, the AI, and the tools.
 
 *   **System Message:**
-    *   Base identity
-    *   Microsoft safety policies
-    *   Agent base instructions
-    *   Copilot memories (facts learned from interactions)
-    *   Custom instructions
-    *   Agent skills
-    *   Custom agents
-*   **User Message:**
-    *   Environment and workspace information
-    *   Conversation summary: Overview, technical foundation, codebase status, problem resolution, progress tracking, active work state, recent operations, and continuation plan
-    *   Reminders (user requests)
-    *   Editor context: Edited file paths, selections, cursor position, and terminal data
-    *   Chat variables (attachments)
-    *   Reusable prompts
-*   **Assistant Message:**
-    *   Text response (Talking)
-    *   Tool call (Acting)
-*   **Tool Message:**
-    *   Result of tool calls (e.g., data formatted in 80-column `.ens` files)
+    *   Base Identity
+    *   Microsoft Safety Policies
+    *   Agent Base Instructions
+    *   Copilot Memories (Facts Learned from Interactions)
+    *   Custom Instructions
+    *   Agent Skills
+    *   Custom Agents
 
-### Structured Message Assembly Pipeline
+*   **User Message:**
+    *   Environment Info and Workspace Info
+    *   Conversation Summary (Overview, Technical Foundation, Codebase Status, Problem Resolution, Progress Tracking, Active Work State, Recent Operations, Continuation Plan)
+    *   Reminder Instructions
+    *   User Requests
+    *   Editor Context (Paths, Selections, Cursor, Terminal)
+    *   Chat Variables (Attachments)
+    *   Reusable Prompts
+
+*   **Assistant Message:**
+    *   Text Response (Talking)
+    *   Tool Calls (Acting)
+
+*   **Tool Message:**
+    *   Results of Tool Calls (e.g., Data in 80-Column ENSDF Files)
+
+**Structured Message Assembly Pipeline**
 1.  File Discovery
 2.  Parsing and Loading
 3.  Tool Reference Resolution
@@ -56,6 +50,6 @@ Semantic structuring (Role Assignment & Tag Wrapping) organizes context across f
 5.  Content Rendering
 6.  Integration into a Raw Chat Message Array
 
-### Endpoint Conversion
-*   **Payload Construction:** Builds a JSON payload based on the message array.
-*   **Model Configuration:** Defines model selection, tool definitions (JSON schema), token limits, sampling parameters (temperature, top_p), streaming options, and thinking budgets.
+**Endpoint Conversion**
+*   **Payload Construction:** JSON Payload Built Based on the Message Array
+*   **Model Configuration:** Model Selection, Tool Definitions (JSON Schema), Token Limits, Sampling Parameters (Temperature, Top_p), Streaming Options, and Thinking Budget
