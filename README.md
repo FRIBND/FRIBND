@@ -15,13 +15,14 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 *   **Agent Skills:** Portable and Interoperable Capabilities across Agents, Scripts, Templates, Examples, Reference Docs, Dynamic Loading Resources.
 
 **Semantic Structuring**
-(Role Assignment & Tag Wrapping) organizes the context across four primary types: System Messages, User Messages, Assistant Messages, and Tool Messages. This framework ensures clear communication between the user, the AI, and the tools.
+(Role Assignment & Tag Wrapping) organizes the context across four primary types: System Messages, User Messages, Assistant Messages, and Tool Messages.
+This framework ensures clear communication between the user, the AI, and the tools.
 
 *   **System Message:**
     *   Base Identity
     *   Microsoft Safety Policies
     *   Agent Base Instructions
-    *   Copilot Memories (Facts Learned from Interactions)
+    *   Copilot Memories (Facts learned from interactions)
     *   Custom Instructions
     *   Agent Skills
     *   Custom Agents
@@ -31,8 +32,8 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
     *   Conversation Summary (Overview, Technical Foundation, Codebase Status, Problem Resolution, Progress Tracking, Active Work State, Recent Operations, Continuation Plan)
     *   Reminder Instructions
     *   User Requests
-    *   Editor Context (Paths, Selections, Cursor, Terminal)
-    *   Chat Variables (Attachments)
+    *   Editor Context (File paths, Selections, Cursor position, Terminal)
+    *   Explicit References (Attachments)
     *   Reusable Prompts
 
 *   **Assistant Message:**
@@ -40,7 +41,7 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
     *   Tool Calls (Acting)
 
 *   **Tool Message:**
-    *   Results of Tool Calls (e.g., Data in 80-Column ENSDF Files)
+    *   Results of Tool Calls (e.g., Data in 80-col ENS diles)
 
 **Structured Message Assembly Pipeline**
 1.  File Discovery
