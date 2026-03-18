@@ -6,6 +6,7 @@ The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) 80
 Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, FRIBND integrates rapidly evolving Large Language Models (LLMs) into the routine workflows of ENSDF evaluators. FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting and 2025 U.S. Nuclear Data Program Meeting and is available and customizable to support the broader nuclear data community.
 
 #### FRIBND AI Agent Architecture
+<img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/78fe61bd-53aa-483e-97ab-dda550b59814" />
 
 **Context Engineering**
 *   **Custom Instructions:** Rules, Standards, Conventions, Guidelines, Guardrails.
