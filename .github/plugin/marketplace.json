@@ -3,7 +3,7 @@
   "metadata": {
     "description": "FRIBND marketplace for ENSDF-focused GitHub Copilot agent plugins.",
     "version": "1.0.0",
-    "pluginRoot": "./plugins"
+    "pluginRoot": "./.github/plugins"
   },
   "owner": {
     "name": "FRIB Nuclear Data Group"
