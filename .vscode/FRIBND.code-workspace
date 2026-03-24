@@ -1,0 +1,12 @@
+{
+	// Defines the project structure: It tells VS Code which folders to include in the workspace
+	// Sets the working directory: The "path": ".." means it includes the parent directory of where this file is located
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../FRIBND"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "fribnd-marketplace",
+  "metadata": {
+    "description": "Local FRIBND marketplace for VS Code agent plugin testing.",
+    "version": "1.0.0"
+  },
+  "owner": {
+    "name": "FRIB Nuclear Data Group"
+  },
+  "plugins": [
+    {
+      "name": "fribnd",
+      "source": "./plugins/fribnd",
+      "description": "FRIBND ENSDF evaluation plugin for GitHub Copilot.",
+      "version": "0.1.0",
+      "skills": [
+        "./plugins/fribnd/skills/adopted-vs-individual-dataset-comparison",
+        "./plugins/fribnd/skills/alpha-decay-q-value",
+        "./plugins/fribnd/skills/average",
+        "./plugins/fribnd/skills/comment-cleanup",
+        "./plugins/fribnd/skills/comment-quoted-values-check",
+        "./plugins/fribnd/skills/data-entry-quality-assurance",
+        "./plugins/fribnd/skills/editorial-review-guidelines",
+        "./plugins/fribnd/skills/ensdf-header-setup",
+        "./plugins/fribnd/skills/flag-expansion",
+        "./plugins/fribnd/skills/gamma-properties-standardization",
+        "./plugins/fribnd/skills/gamma-selection-rules",
+        "./plugins/fribnd/skills/image-data-extraction",
+        "./plugins/fribnd/skills/l-transfer-comments-standardization",
+        "./plugins/fribnd/skills/large-scale-data-entry",
+        "./plugins/fribnd/skills/lifetime-comments-standardization",
+        "./plugins/fribnd/skills/multipolarity-mixing-ratio",
+        "./plugins/fribnd/skills/nds-doi-lookup",
+        "./plugins/fribnd/skills/numerical-cross-check",
+        "./plugins/fribnd/skills/reaction-equations",
+        "./plugins/fribnd/skills/reconciling-data",
+        "./plugins/fribnd/skills/resonance-strength-scaling",
+        "./plugins/fribnd/skills/spin-parity",
+        "./plugins/fribnd/skills/value-occurrence-check",
+        "./plugins/fribnd/skills/xref-label-update"
+      ]
+    }
+  ]
+}

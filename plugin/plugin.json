@@ -1,0 +1,19 @@
+{
+  "name": "fribnd",
+  "version": "0.1.0",
+  "description": "ENSDF-focused FRIB nuclear data plugin with domain skills, a specialized agent, and validation hooks.",
+  "author": {
+    "name": "FRIB Nuclear Data Group"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ensdf",
+    "nuclear-data",
+    "frib",
+    "gamma-ray",
+    "evaluation",
+    "physics"
+  ],
+  "agents": "./agents",
+  "hooks": "./hooks.json"
+}
