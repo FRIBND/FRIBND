@@ -2,5 +2,16 @@
   "chat.plugins.enabled": true,
   "chat.plugins.marketplaces": [
     "FRIBND/FRIBND"
-  ]
+  ],
+  "extraKnownMarketplaces": {
+    "fribnd": {
+      "source": {
+        "source": "github",
+        "repo": "FRIBND/FRIBND"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "fribnd@fribnd": true
+  }
 }
