@@ -11,13 +11,7 @@ ENSDF-focused GitHub Copilot agent plugin for nuclear structure data evaluation 
 3. Add the `FRIBND/FRIBND` marketplace if it is not already configured.
 4. Install the `fribnd` plugin.
 
-### Install From Source
-
-Use `Chat: Install Plugin From Source` and enter:
-
-```text
-https://github.com/FRIBND/FRIBND
-```
+This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
 
 ## What's Included
 

@@ -2,8 +2,7 @@
   "name": "fribnd",
   "metadata": {
     "description": "FRIBND marketplace for ENSDF-focused GitHub Copilot agent plugins.",
-    "version": "1.0.0",
-    "pluginRoot": "./.github/plugins"
+    "version": "1.0.0"
   },
   "owner": {
     "name": "FRIB Nuclear Data Group"
@@ -11,7 +10,7 @@
   "plugins": [
     {
       "name": "fribnd",
-      "source": "fribnd",
+      "source": "./plugins/fribnd",
       "description": "ENSDF-focused FRIB nuclear data plugin with domain skills, a specialized agent, and validation hooks.",
       "version": "0.1.0",
       "author": {
