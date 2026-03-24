@@ -78,7 +78,7 @@ foreach ($el in $nuclides) {
 
 ### Step 2: Update headers
 ```powershell
-python ".github\temp\update_headers.py" "D:\X\ND\ENSDF\A${mass}"
+python "temp\update_headers.py" "D:\X\ND\ENSDF\A${mass}"
 ```
 
 ---
@@ -88,4 +88,4 @@ python ".github\temp\update_headers.py" "D:\X\ND\ENSDF\A${mass}"
 1. **NEVER edit `.old` files** - reference copies only
 2. **Preserve existing H records** - only INSERT new H record
 3. **80-character lines** - all ENSDF records must be exactly 80 chars
-4. **Validate**: `python .github/scripts/column_calibrate.py <file>`
+4. **Validate**: `python scripts/column_calibrate.py <file>`

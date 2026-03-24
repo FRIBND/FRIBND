@@ -236,7 +236,7 @@ def main():
             "Required steps:\n"
             "  1. Identify the misaligned field from the error output below.\n"
             "  2. Fix ONE field at a time using replace_string_in_file.\n"
-            '  3. Re-run: python .github/scripts/ensdf_1line_ruler.py --line "<fixed line>"\n'
+            '  3. Re-run: python scripts/ensdf_1line_ruler.py --line "<fixed line>"\n'
             "  4. Confirm exit code 0 before proceeding to the next edit.\n\n"
             "Do NOT make multiple edits before validating each one.\n\n"
             f"Validation errors:\n{error_text}"

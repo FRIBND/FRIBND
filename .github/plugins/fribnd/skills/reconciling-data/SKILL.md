@@ -75,8 +75,8 @@ When multiple sources contribute RI values, apply these precedence rules consist
 Use atomic string replacement (entire level block at once):
 
 ```bash
-python .github/scripts/ensdf_1line_ruler.py --file target.ens --show-only-wrong
-python .github/scripts/check_gamma_ordering.py target.ens
+python scripts/ensdf_1line_ruler.py --file target.ens --show-only-wrong
+python scripts/check_gamma_ordering.py target.ens
 ```
 
 Both must return exit code 0.

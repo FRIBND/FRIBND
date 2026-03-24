@@ -13,22 +13,22 @@ Provide this command for the requested conversion pattern:
 
 ```bash
 # Convert single file by name
-python .github/scripts/ens2pdf.py Si35_adopted
+python scripts/ens2pdf.py Si35_adopted
 
 # Convert with full file path
-python .github/scripts/ens2pdf.py "finished/Si35/new/Si35_adopted.ens"
+python scripts/ens2pdf.py "finished/Si35/new/Si35_adopted.ens"
 
 # Convert all files for an element
-python .github/scripts/ens2pdf.py Si
+python scripts/ens2pdf.py Si
 
 # Convert files matching pattern
-python .github/scripts/ens2pdf.py "Si35_*sig"
+python scripts/ens2pdf.py "Si35_*sig"
 
 # Convert and open in VS Code (default)
-python .github/scripts/ens2pdf.py Si35_adopted --open
+python scripts/ens2pdf.py Si35_adopted --open
 
 # Convert and open in system viewer
-python .github/scripts/ens2pdf.py Si35_adopted --open --system
+python scripts/ens2pdf.py Si35_adopted --open --system
 ```
 
 #### PDF Generation

@@ -5,6 +5,8 @@
   "author": {
     "name": "FRIB Nuclear Data Group"
   },
+  "homepage": "https://github.com/FRIBND/FRIBND",
+  "repository": "https://github.com/FRIBND/FRIBND",
   "license": "MIT",
   "keywords": [
     "ensdf",

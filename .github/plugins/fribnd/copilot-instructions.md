@@ -600,7 +600,7 @@ print('Length:', len(header))
 
 **The Sacred Workflow** (MUST Follow for Every Single Edit):
 1.  **EDIT** → Make ONE precise change to ONE field.
-2.  **VALIDATE** → Run ruler on that exact line: `python .github/scripts/ensdf_1line_ruler.py --line "your 80-char line"`.
+2.  **VALIDATE** → Run ruler on that exact line: `python scripts/ensdf_1line_ruler.py --line "your 80-char line"`.
 3.  **CONFIRM** → Verify exit code 0 and check ruler output.
 4.  **REPEAT** → Move to next edit only after confirmation.
 
@@ -614,11 +614,11 @@ print('Length:', len(header))
 
 #### Before Any Edit
 
-1.  Run `python .github/scripts/column_calibrate.py "filename.ens"` (MANDATORY).
+1.  Run `python scripts/column_calibrate.py "filename.ens"` (MANDATORY).
     -   Validates L-field positioning (column 56), S-field left-justification (columns 65-74).
     -   Verifies comment flags at column 77.
     -   Reports data-record line-length issues (L/G/E/B/DP records).
-2.  Run `python .github/scripts/check_gamma_ordering.py "filename.ens"` (MANDATORY).
+2.  Run `python scripts/check_gamma_ordering.py "filename.ens"` (MANDATORY).
     -   Verifies ascending energy order for L-records and G-records.
 3.  Manual verification: `column_calibrate.py` does NOT check DP, B, or E record formatting.
 4.  Read current file state (never assume file structure).
@@ -627,7 +627,7 @@ print('Length:', len(header))
 
 #### During Each Edit
 
-Run ruler for each changed line: `python .github/scripts/ensdf_1line_ruler.py --line "your 80-char line"`
+Run ruler for each changed line: `python scripts/ensdf_1line_ruler.py --line "your 80-char line"`
 -   MANDATORY for every line you edit.
 -   Immediate visual ruler, length, and field validation.
 -   Must verify exit code 0 before proceeding to next edit.
@@ -639,17 +639,17 @@ Repeat validation sequence (steps 1-2 from "Before Any Edit" section).
 ### ENSDF 1-Line Ruler Tool
 
 **Usage Modes:**
--   **Single line check:** `python .github/scripts/ensdf_1line_ruler.py --line "your exact 80-char line"`
+-   **Single line check:** `python scripts/ensdf_1line_ruler.py --line "your exact 80-char line"`
     -   Quick ruler display, length check, immediate validation feedback.
     -   USE THIS for every line you edit (essential AI workflow step).
--   **File scan:** `python .github/scripts/ensdf_1line_ruler.py --file path/to/file.ens [--show-only-wrong]`
+-   **File scan:** `python scripts/ensdf_1line_ruler.py --file path/to/file.ens [--show-only-wrong]`
     -   Checks all data records (L, G, E, B, DP records); exit code 1 if any errors found.
     -   Use `--show-only-wrong` to quickly identify problem lines only.
 
 ### Column Calibration Tool (column_calibrate.py)
 
 Comprehensive ENSDF field validation and data-record line-length checking:
--   **Basic validation:** `python .github/scripts/column_calibrate.py "file.ens"`
+-   **Basic validation:** `python scripts/column_calibrate.py "file.ens"`
     -   Prints 80-column ruler with field boundaries.
     -   Checks field positioning and reports line-length issues.
 -   **Optional auto-fix:** `--fix` flag can pad/trim spaces to exactly 80-character line lengths.
@@ -662,8 +662,8 @@ Comprehensive ENSDF field validation and data-record line-length checking:
 ### Energy Ordering Tool (check_gamma_ordering.py)
 
 Validates ascending energy order for L-records and G-records:
--   **Basic check:** `python .github/scripts/check_gamma_ordering.py "file.ens"`
--   **Multiple files:** `python .github/scripts/check_gamma_ordering.py "A35/K35/new/*.ens" --summary`
+-   **Basic check:** `python scripts/check_gamma_ordering.py "file.ens"`
+-   **Multiple files:** `python scripts/check_gamma_ordering.py "A35/K35/new/*.ens" --summary`
 -   **Verbose output:** Add `--verbose` flag for detailed checking process.
 -   **Exit codes:** 0 = correct ordering; 1 = ordering violations found.
 

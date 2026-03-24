@@ -21,13 +21,13 @@ Enhanced Features:
 - Support for Windows and Unix line endings
 
 Usage:
-    python .github/check_gamma_ordering.py filename.ens [--verbose]
-    python .github/check_gamma_ordering.py *.ens [--summary]
+    python scripts/check_gamma_ordering.py filename.ens [--verbose]
+    python scripts/check_gamma_ordering.py *.ens [--summary]
 
 Examples:
-    python .github/check_gamma_ordering.py S35_34s_d_pg.ens --verbose
-    python .github/check_gamma_ordering.py "A35/S35/new/*.ens" --summary
-    python .github/check_gamma_ordering.py "A35/*/new/*adopted.ens" --summary
+    python scripts/check_gamma_ordering.py S35_34s_d_pg.ens --verbose
+    python scripts/check_gamma_ordering.py "A35/S35/new/*.ens" --summary
+    python scripts/check_gamma_ordering.py "A35/*/new/*adopted.ens" --summary
 
 Author: FRIB Nuclear Data Group
 Date: January 2025

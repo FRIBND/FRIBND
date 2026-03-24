@@ -1,4 +1,4 @@
-﻿# Nuclear Physics Angular Momentum Coupling Guide
+# Nuclear Physics Angular Momentum Coupling Guide
 
 This document provides the theoretical background and practical usage guide for the `angular_momentum_coupling.py` utility. This tool calculates allowed final nuclear states based on quantum mechanical selection rules.
 
@@ -155,7 +155,7 @@ These reactions exchange nucleon type (n ↔ p), governed by the transferred ang
 When you run the code:
 
 ```bash
-python .github/scripts/angular_momentum_coupling.py
+python scripts/angular_momentum_coupling.py
 ```
 
 then enter prompted values, for example:

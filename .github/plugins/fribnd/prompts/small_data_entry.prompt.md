@@ -4,7 +4,7 @@
 
 Use this prompt for one 1964Gl04 resonance table at a time.
 
-Before starting, reread `.github/copilot-instructions.md` and `.github/agents/FRIBND.agent.md` from start to end.
+Before starting, reread `copilot-instructions.md` and `agents/FRIBND.agent.md` from start to end.
 
 - Source: `1964GL04_Ep*.md`
 - Target: the matching resonance level block in the adopted ENSDF file
@@ -63,14 +63,14 @@ cG E,RI$from 1964Gl04, but not observed in later work.
 For each new or changed data record:
 
 ```powershell
-python .github/scripts/ensdf_1line_ruler.py --line "<exact 80-char line>"
+python scripts/ensdf_1line_ruler.py --line "<exact 80-char line>"
 ```
 
 After the block update:
 
 ```powershell
-python .github/scripts/column_calibrate.py "<target-file>"
-python .github/scripts/check_gamma_ordering.py "<target-file>"
+python scripts/column_calibrate.py "<target-file>"
+python scripts/check_gamma_ordering.py "<target-file>"
 ```
 
 For multi-row data-entry passes, also do both QA checks before closing:

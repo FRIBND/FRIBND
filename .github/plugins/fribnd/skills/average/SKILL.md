@@ -14,7 +14,7 @@ argument-hint: [VALUE1 UNC1 VALUE2 UNC2 ...]
 ## CLI Tool
 
 ```bash
-python .github/scripts/Java_Average.py VALUE1 UNC1 [VALUE2 UNC2 ...]
+python scripts/Java_Average.py VALUE1 UNC1 [VALUE2 UNC2 ...]
 ```
 
 **Algorithm:** Replicates `AverageTool_22January2025.jar`.
@@ -22,7 +22,7 @@ python .github/scripts/Java_Average.py VALUE1 UNC1 [VALUE2 UNC2 ...]
 ## Workflow
 
 1. **Collect Data**: Gather values and uncertainties from original papers.
-2. **Execute**: `python .github/scripts/Java_Average.py 280 50 215 70 130 60 120 65`
+2. **Execute**: `python scripts/Java_Average.py 280 50 215 70 130 60 120 65`
 3. **Adopt Result**: Use exact "Suggested Adopted Result" and uncertainty.
 4. **Update File**: Apply to L-record and standardize cL comment.
 
