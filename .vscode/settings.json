@@ -1,9 +1,9 @@
 {
   "chat.plugins.enabled": true,
   "chat.plugins.marketplaces": [
-    "file:///d:/X/ND/FRIBND/marketplace"
+    "file:///d:/X/ND/FRIBND"
   ],
   "chat.pluginLocations": {
-    "d:/X/ND/FRIBND/plugin": true
+    "d:/X/ND/FRIBND/plugins/fribnd": true
   }
 }
