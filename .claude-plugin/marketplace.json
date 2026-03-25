@@ -1,0 +1,26 @@
+{
+  "name": "fribnd",
+  "owner": {
+    "name": "FRIB Nuclear Data Group"
+  },
+  "metadata": {
+    "description": "FRIB Nuclear Data plugin marketplace — ENSDF nuclear data evaluation tools and agents"
+  },
+  "plugins": [
+    {
+      "name": "fribnd",
+      "source": "./plugins/fribnd",
+      "description": "FRIBND AI Agent for ENSDF nuclear data evaluation",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": [
+        "ensdf",
+        "frib",
+        "physics",
+        "nuclear-physics",
+        "nuclear-data",
+        "nuclear-data-evaluation"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# FRIBND Agent Plugin
+# FRIBND AI Agent Plugin
 
 AI/ML Technical Innovation at FRIB Nuclear Data Group
 
