@@ -10,7 +10,9 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 FRIBND is available as an open-source repository at https://github.com/FRIBND/FRIBND
 
-To support the broader nuclear data community, a customizable version of FRIBND with 24 Agent Skills has be released in the Microsoft Visual Studio Code Agent Plugin Marketplace.
+To support the broader nuclear data community, a customizable version of FRIBND with 25 agent skills has been released in the Microsoft Visual Studio Code Agent Plugin Marketplace.
+
+Note on instructions: the plugin bundles `copilot-instructions.md` as reference material, but VS Code agent plugins do not publish workspace-level instructions as an automatically applied plugin primitive. FRIBND exposes the same baseline behavior through the `FRIBND` agent and the `ensdf-core-rules` skill.
 
 ## Installation
 
@@ -31,7 +33,7 @@ This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
 
 ### Skills
 
-- 24 ENSDF domain skills covering data entry, QA, gamma-property checks, reconciliation, comments, reaction equations, multipolarity, and related evaluator workflows.
+- 25 ENSDF domain skills covering general ENSDF rules, data entry, QA, gamma-property checks, reconciliation, comments, reaction equations, multipolarity, and related evaluator workflows.
 
 ### Hooks
 
@@ -42,6 +44,7 @@ This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
 
 - `agents/`: custom agents bundled with the plugin.
 - `skills/`: installable ENSDF skills.
+- `copilot-instructions.md`: bundled reference instructions shipped with the plugin payload.
 - `scripts/`: bundled helper scripts referenced by the agent and skills.
 - `hooks.json`: plugin hook configuration.
 
