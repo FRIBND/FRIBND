@@ -3,13 +3,15 @@
     "PreToolUse": [
       {
         "type": "command",
-        "command": "powershell -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/block-git-revert.ps1\""
+        "command": "python hooks/scripts/block_git_revert.py",
+        "cwd": "."
       }
     ],
     "PostToolUse": [
       {
         "type": "command",
-        "command": "python \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate_ens.py\""
+        "command": "python hooks/scripts/validate_ens.py",
+        "cwd": "."
       }
     ]
   }

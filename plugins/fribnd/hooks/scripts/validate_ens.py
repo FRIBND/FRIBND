@@ -60,7 +60,7 @@ def find_all_ens_paths(payload):
     paths = set()
     tool_input = payload.get("tool_input") or {}
 
-    # Environment variable override (used by some Claude Code integrations)
+    # Environment variable override retained for compatibility with older integrations
     env_path = os.environ.get("TOOL_INPUT_FILE_PATH", "")
     if env_path and env_path.lower().endswith(".ens"):
         paths.add(env_path)
@@ -170,13 +170,23 @@ def comment_only_edit(payload):
 
 
 def find_ruler_script(payload):
-    """Locate ensdf_1line_ruler.py, preferring the cwd provided by VS Code."""
+    """Locate ensdf_1line_ruler.py, preferring the plugin's bundled copy."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    plugin_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+    plugin_candidate = os.path.join(plugin_root, "scripts", "ensdf_1line_ruler.py")
+    if os.path.isfile(plugin_candidate):
+        return plugin_candidate
+
     cwd = payload.get("cwd", "") or os.getcwd()
-    candidate = os.path.join(cwd, ".github", "scripts", "ensdf_1line_ruler.py")
-    if os.path.isfile(candidate):
-        return candidate
-    # Fallback to relative path (works when subprocess cwd is workspace root)
-    return os.path.join(".github", "scripts", "ensdf_1line_ruler.py")
+    workspace_candidate = os.path.join(cwd, "scripts", "ensdf_1line_ruler.py")
+    if os.path.isfile(workspace_candidate):
+        return workspace_candidate
+
+    legacy_candidate = os.path.join(cwd, ".github", "scripts", "ensdf_1line_ruler.py")
+    if os.path.isfile(legacy_candidate):
+        return legacy_candidate
+
+    return plugin_candidate
 
 
 def run_ruler(ruler_script, file_path):
