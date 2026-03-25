@@ -29,7 +29,7 @@ This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
 
 ### Agent
 
-- `FRIBND`: ENSDF-focused editing and validation agent for 80-column nuclear data workflows.
+- `FRIBND`: AI Agent for Evaluated Nuclear Structure Data File (ENSDF) 80-column fixed format, exact column positioning, data formatting and editing with absolute precision and numerical rigor.
 
 ### Skills
 
