@@ -1,7 +1,7 @@
 {
   "name": "fribnd",
   "metadata": {
-    "description": "FRIBND marketplace for ENSDF-focused GitHub Copilot agent plugins.",
+    "description": "FRIBND AI Agent for ENSDF",
     "version": "1.0.0"
   },
   "owner": {
@@ -11,7 +11,7 @@
     {
       "name": "fribnd",
       "source": "./plugins/fribnd",
-      "description": "ENSDF-focused FRIB nuclear data plugin with domain skills, a specialized agent, and validation hooks.",
+      "description": "FRIBND AI Agent Plugin for ENSDF nuclear data evaluation.",
       "version": "0.1.0",
       "author": {
         "name": "FRIB Nuclear Data Group"
@@ -19,11 +19,11 @@
       "homepage": "https://github.com/FRIBND/FRIBND",
       "keywords": [
         "ensdf",
-        "nuclear-data",
         "frib",
-        "gamma-ray",
-        "evaluation",
-        "physics"
+        "physics",
+        "nuclear-physics",
+        "nuclear-data",
+        "nuclear-data-evaluation"
       ],
       "license": "MIT",
       "repository": "https://github.com/FRIBND/FRIBND"

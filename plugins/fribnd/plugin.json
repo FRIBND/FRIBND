@@ -1,7 +1,7 @@
 {
   "name": "fribnd",
   "version": "0.1.0",
-  "description": "ENSDF-focused FRIB nuclear data plugin with domain skills, a specialized agent, and validation hooks.",
+  "description": "FRIBND AI Agent for ENSDF",
   "author": {
     "name": "FRIB Nuclear Data Group"
   },
@@ -9,12 +9,12 @@
   "repository": "https://github.com/FRIBND/FRIBND",
   "license": "MIT",
   "keywords": [
-    "ensdf",
-    "nuclear-data",
-    "frib",
-    "gamma-ray",
-    "evaluation",
-    "physics"
+        "ensdf",
+        "frib",
+        "physics",
+        "nuclear-physics",
+        "nuclear-data",
+        "nuclear-data-evaluation"
   ],
   "agents": "./agents",
   "skills": "./skills",
