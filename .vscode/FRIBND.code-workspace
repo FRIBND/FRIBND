@@ -8,5 +8,10 @@
 		{
 			"path": "../../FRIBND"
 		}
-	]
+	],
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"git ls-tree": true
+		}
+	}
 }
