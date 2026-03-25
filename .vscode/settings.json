@@ -1,5 +1,8 @@
 {
   "chat.plugins.enabled": true,
+  "chat.plugins.marketplaces": [
+    "FRIBND/FRIBND"
+  ],
   "extraKnownMarketplaces": {
     "fribnd": {
       "source": {
