@@ -1,5 +1,3 @@
-**AI-Assisted Nuclear Data Technical Innovation at FRIB**
-
 **`FRIBND` AI Agent:**
 The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows has been developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
 
