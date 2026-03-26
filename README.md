@@ -1,11 +1,22 @@
 **`FRIBND` AI Agent:**
 The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows has been developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
 
-Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the FRIBND AI agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows currently used by ENSDF evaluators. The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting and 2025 U.S. Nuclear Data Program Meeting.
+Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the FRIBND AI agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows currently used by ENSDF evaluators.
 
-FRIBND is available as an open-source repository at https://github.com/FRIBND/FRIBND
+2025-08-06: The initial version of the FRIBND AI Agent Custom Chat Mode was posted online within https://github.com/sunlijie-msu/ENSDF
 
-To support the broader nuclear data community, a customizable version of FRIBND with 24 Agent Skills has be released in the Microsoft Visual Studio Code Agent Plugin Marketplace.
+2025-08-14: The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting.
+
+2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
+
+2025-11-14: The FRIBND Custom Chat Mode was upgraded to FRIBND Custom AI Agent.
+
+2026-02-23: Agent Skills were introduced as modular, reusable capabilities that can be dynamically loaded into the FRIBND AI Agent to perform specific tasks within ENSDF workflows.
+
+2026-03-04: FRIBND is available as an open-source repository at https://github.com/FRIBND/FRIBND
+
+2026-03-25: FRIBND Version 0.0.1 with 2 Agent Hooks and 24 Agent Skills was released as an Agent Plugin via the Microsoft Visual Studio Code Plugin Marketplace.
+
 
 #### FRIBND AI Agent Architecture
 <img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/78fe61bd-53aa-483e-97ab-dda550b59814" />
