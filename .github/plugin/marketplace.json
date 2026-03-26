@@ -2,7 +2,7 @@
   "name": "fribnd",
   "metadata": {
     "description": "FRIB Nuclear Data plugin marketplace — ENSDF nuclear data evaluation tools and agents",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "pluginRoot": "./plugins"
   },
   "owner": {
@@ -13,7 +13,7 @@
       "name": "fribnd",
       "source": "fribnd",
       "description": "FRIBND AI Agent for ENSDF nuclear data evaluation",
-      "version": "1.0.0",
+      "version": "0.0.1",
       "license": "MIT",
       "homepage": "https://github.com/FRIBND/FRIBND",
       "repository": "https://github.com/FRIBND/FRIBND",
