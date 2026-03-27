@@ -17,6 +17,19 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 2026-03-25: FRIBND Version 0.0.1 with 2 Agent Hooks and 24 Agent Skills was released as an Agent Plugin via the Microsoft Visual Studio Code Plugin Marketplace.
 
+Installation:
+
+1. Configure plugin marketplaces by clicking "Add Item" and enter `FRIBND/FRIBND` with the `setting(chat.plugins.marketplaces)` setting.
+
+
+1. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins FRIBND` in the search field.
+
+    Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
+
+1. Click **Install** to install the FRIBND Plugin in your user profile.
+   Currently, VS Code does not support installing Agent Plugins in a specific workspace.
+
+
 
 #### FRIBND AI Agent Architecture
 <img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/78fe61bd-53aa-483e-97ab-dda550b59814" />
