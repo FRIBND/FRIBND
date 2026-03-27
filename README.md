@@ -27,7 +27,17 @@ Installation:
     Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
 
 1. Click **Install** to install the FRIBND Plugin in your user profile.
-   Currently, VS Code does not support installing Agent Plugins in a specific workspace.
+
+
+To-do:
+As of 2026-03-26,
+
+VS Code does not support installing Agent Plugins in a specific workspace.
+
+VS Code Agent Plugins do not support Copilot-instructions.md shipped with the plugin.
+
+VS Code Agent Plugins do not support Agent-scoped hooks.
+
 
 
 
