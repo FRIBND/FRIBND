@@ -10,13 +10,19 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 ## Development Timeline
 
-- 2025-08-06: The initial version of the FRIBND Custom Agent Chat Mode was posted within https://github.com/sunlijie-msu/ENSDF.
-- 2025-08-14: The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting.
-- 2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
-- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to the FRIBND Custom AI Agent.
-- 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into the FRIBND AI Agent to perform specific tasks within ENSDF workflows.
-- 2026-03-04: FRIBND became available as an open-source repository at https://github.com/FRIBND/FRIBND.
 - 2026-03-25: FRIBND Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplace.
+
+- 2026-03-04: FRIBND became available as an open-source repository at https://github.com/FRIBND/FRIBND.
+
+- 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into the FRIBND AI Agent to perform specific tasks within ENSDF workflows.
+
+- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to the FRIBND Custom AI Agent.
+
+- 2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
+
+- 2025-08-14: The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting.
+
+- 2025-08-06: The initial version of the FRIBND Custom Agent Chat Mode was posted within https://github.com/sunlijie-msu/ENSDF.
 
 ## Installation
 
