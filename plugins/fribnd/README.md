@@ -1,35 +1,44 @@
 # FRIBND AI Agent Plugin
 
-Part of AI/ML Technical Innovation Project at FRIB Nuclear Data Group
+Part of the AI/ML Technical Innovation Project at the FRIB Nuclear Data Group.
 
-FRIBND AI Agent:
+## Overview
 
-The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows has been developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
+The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows.
+Developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
 
-Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the FRIBND AI agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows currently used by ENSDF evaluators. The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting and 2025 U.S. Nuclear Data Program Meeting.
+Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the FRIBND AI Agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows used by ENSDF evaluators.
 
-FRIBND is available as an open-source repository at https://github.com/FRIBND/FRIBND
+## Development Timeline
 
-To support the broader nuclear data community, a customizable version of FRIBND with 25 agent skills has been released in the Microsoft Visual Studio Code Agent Plugin Marketplace.
-
-Note on instructions: the plugin bundles `copilot-instructions.md` as reference material, but VS Code agent plugins do not publish workspace-level instructions as an automatically applied plugin primitive. FRIBND exposes the same baseline behavior through the `FRIBND` agent and the `ensdf-core-rules` skill.
+- 2025-08-06: The initial version of the FRIBND Custom Agent Chat Mode was posted within https://github.com/sunlijie-msu/ENSDF.
+- 2025-08-14: The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting.
+- 2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
+- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to the FRIBND Custom AI Agent.
+- 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into the FRIBND AI Agent to perform specific tasks within ENSDF workflows.
+- 2026-03-04: FRIBND became available as an open-source repository at https://github.com/FRIBND/FRIBND.
+- 2026-03-25: FRIBND Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplace.
 
 ## Installation
 
-### VS Code Agent Plugins
+1. Configure plugin marketplaces by clicking "Add Item" and entering `FRIBND/FRIBND` in the `setting(chat.plugins.marketplaces)` setting.
+2. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins FRIBND` in the search field.
+   - Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
+3. Click **Install** to install the FRIBND Plugin in your user profile.
 
-1. Open the Extensions view.
-2. Search for `@agentPlugins`.
-3. Add the `FRIBND/FRIBND` marketplace if it is not already configured.
-4. Install the `fribnd` plugin.
+## Caveats
 
-This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
+As of 2026-03-26:
+- VS Code does not support installing Agent Plugins in a specific workspace.
+- VS Code Agent Plugins do not support workspace-level `copilot-instructions.md` shipped with the plugin.
+- VS Code Agent Plugins do not support Agent-scoped hooks.
+- Agent Skills performance and reliability vary based on the underlying LLM capabilities and the complexity of the task.
 
-## What's Included
+## What's Shipped
 
 ### Agent
 
-- `FRIBND`: AI Agent for Evaluated Nuclear Structure Data File (ENSDF) 80-column fixed format, exact column positioning, data formatting and editing with absolute precision and numerical rigor.
+- `FRIBND`: AI Agent for Evaluated Nuclear Structure Data File (ENSDF) 80-column fixed format, exact column positioning, data formatting, and editing with absolute precision and numerical rigor.
 
 ### Skills
 
@@ -42,17 +51,10 @@ This plugin is distributed through the `FRIBND/FRIBND` marketplace repository.
 
 ## Repository Layout
 
-- `agents/`: custom agents bundled with the plugin.
-- `skills/`: installable ENSDF skills.
-- `copilot-instructions.md`: bundled reference instructions shipped with the plugin payload.
-- `scripts/`: bundled helper scripts referenced by the agent and skills.
-- `hooks.json`: plugin hook configuration.
-
-## Source
-
-This plugin is published from the FRIBND repository:
-
-https://github.com/FRIBND/FRIBND
+- `agents/`: Custom agents bundled with the plugin.
+- `skills/`: Installable ENSDF skills.
+- `scripts/`: Bundled helper scripts referenced by the agent and skills.
+- `hooks.json`: Plugin hook configuration.
 
 Contact: nucleardata@frib.msu.edu
 
