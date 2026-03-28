@@ -1,6 +1,6 @@
 # FRIBND AI Agent Plugin
 
-Part of the AI/ML Technical Innovation Project at the FRIB Nuclear Data Group.
+Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group.
 
 ## Overview
 
