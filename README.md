@@ -10,7 +10,7 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 ## Development Timeline
 
-- 2026-03-25: FRIBND Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplace.
+- 2026-03-25: FRIBND Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplaces.
 
 - 2026-03-04: FRIBND became available as an open-source repository at https://github.com/FRIBND/FRIBND.
 
