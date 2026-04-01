@@ -45,7 +45,7 @@ As of 2026-03-26:
 <img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/78fe61bd-53aa-483e-97ab-dda550b59814" />
 
 
-**Context Engineering**
+**Harness Engineering**
 *   **Custom Instructions:** Rules, Standards, Conventions, Guidelines, Guardrails.
 *   **Custom Agents:** Persona, Role, Behavior, Tools.
 *   **Subagents:** Handoffs, Guided Sequential Workflows.
