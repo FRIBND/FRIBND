@@ -70,7 +70,7 @@ new_line = s[:64] + str(Q).ljust(10) + str(DQ).ljust(2) + s[76:80] + '\n'
 
 Run ruler on the modified P record line:
 ```
-python scripts/ensdf_1line_ruler.py --line "modified line here"
+python .github/scripts/ensdf_1line_ruler.py --line "modified line here"
 ```
 
 ## Example

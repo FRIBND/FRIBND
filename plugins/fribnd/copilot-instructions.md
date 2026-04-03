@@ -5,7 +5,7 @@ applyTo: "**"
 
 ## Your Role
 
-You are an AI agent specializing in the Evaluated Nuclear Structure Data File (ENSDF) 80-column fixed format. You must follow strict ENSDF data formatting and column positioning protocols to ensure absolute precision and numerical rigor.
+You are an AI Agent specializing in the Evaluated Nuclear Structure Data File (ENSDF) 80-column fixed format. You must follow strict ENSDF data formatting and column positioning protocols to ensure absolute precision and numerical rigor.
 
 ---
 
@@ -56,19 +56,22 @@ You are an AI agent specializing in the Evaluated Nuclear Structure Data File (E
 
 **Important Rules:**
 
-- Use `|?` for approximate values (renders as ≈ or ~).
+- Use `|?` for approximate values (renders as ≈).
 - Standalone `~` is prohibited for approximate values in ENSDF.
 
 #### Common Examples
 
-- `%(|e+|b{++})p` → %(ε+β⁺)p
-- `{+208}Pb({+36}S,{+35}S)` → ²⁰⁸Pb(³⁶S,³⁵S)
-- `{+32}S({+3}He,p|g){+34}Cl` → ³²S(³He,pγ)³⁴Cl
-- `{+nat}Ni` → natural Nickel
+- `%(|e+|b{++})p` decay → %(ε+β⁺)p decay
+- `{+208}Pb({+36}S,{+35}S)` reaction → ²⁰⁸Pb(³⁶S,³⁵S) reaction
+- `{+32}S({+3}He,p|g){+34}Cl` reaction → ³²S(³He,pγ)³⁴Cl reaction
+- `{+nat}Ni` means natural nickel
 - `|s(E({+3}He),|q)` → σ(E(³He),θ)
 - `Zn{-3}P{-2}` → Zn₃P₂
+- `log {Ift}` → log <i>ft</i> (italicize "ft")
 
-#### General Language Style: Telegraphic Phrasing
+#### General Language Style
+
+Use telegraphic phrasing in comment text.
 
 ### Nuclear Science References (NSR)
 
@@ -169,7 +172,7 @@ Example:
 12345678901234567890123456789012345678901234567890123456789012345678901234567890
  35XX  G EEEE.E    DE II.I   DI MUL      MR      DMR   CC     DC TI       DTC  Q
  35P   G 1572.0    10 70.0   24 M1+E2    -1.23   25    0.090  20 71.0     23A  S
- 35Si  G 2572.0    5  5.0    2  E2       +2.1          0.05   5  5.1      2 B  ?
+ 35Si  G 2572.0    5  5.0    2  E2       +2.1          0.05   5  5.1      6 B  ?
 ```
 
 | Field | Columns | Description |
@@ -362,11 +365,9 @@ Example:
 
 **Critical E-Record Rules:**
 -   Must follow LEVEL record for the level being populated in the decay.
--   IE, IB and TI must be in same units (see NORMALIZATION record).
--   Energy field given only if measured or deduced from measured beta plus end-point energy.
+-   IE, IB and TI must be in same units.
 -   TI = IE + IB for total decay intensity to the level.
 -   Forbiddenness classification in columns 78-79 ('1U', '2U' for first-, second-unique forbidden).
--   Additional indicator in column 80 for uncertain ('?') or assumed ('S') transitions.
 
 #### Alpha Decay Record (A-Record)
 
@@ -401,36 +402,9 @@ Example:
 -   Must follow the daughter LEVEL record for the level being populated in the α decay.
 
 
-#### LOG FT Format Rules (Critical for B and E Records)
-
-**MANDATORY LOG FT FORMATTING IN ENSDF**
-
-Records (LOGFT field, columns 42-49):
--   **Format:** Decimal notation (e.g., `4.85`, `6.2`).
--   **Precision:** 1-2 decimal places typically.
--   **Uncertainty:** DFT field (columns 50-55) contains uncertainty in last digits.
--   **Special notations:**
-    -   Greater than: `>8.5` (blank DFT).
-    -   Less than: `<3.2` (blank DFT).
-    -   Approximate: `|?4.8`.
-    -   Systematic: `4.85 SY` (SY in DFT).
-
-**Comments:**
--   **Use italic notation:** `log {Ift}` (NOT `log ft`).
--   **Examples:** "Deduced levels, J, π, decay branching ratios, log {Ift}, and partial decay widths".
-
-**Examples:**
-
-```text
-LOGFT     DFT
-4.85      15     → log ft = 4.85(15)
->8.5             → log ft > 8.5
-|?5.1            → log ft ≈ 5.1
-```
-
 ### XREF Notation Rules
 
-XREF (cross-reference) entries in L-records indicate which datasets observe a level. Notation follows:
+Only in the Adopted Datasets: XREF (cross-reference) entries immediately following an L-record indicate which datasets observe this level.
 
 | Notation | Meaning | Example |
 | :--- | :--- | :--- |
@@ -441,13 +415,14 @@ XREF (cross-reference) entries in L-records indicate which datasets observe a le
 
 ---
 
-## 3. ENSDF Uncertainty Notation
+## 3. ENSDF Uncertainty Notation Rules
 
 **CRITICAL:** Uncertainties in data record fields and comment lines use DIFFERENT formats, but both follow an "uncertainty-in-last-digits" notation. Ensure the number of decimal places in the main value precisely matches the decimal place represented by the final digit of the uncertainty.
 
-Scientific data typically allows 1 or 2 digits for uncertainties.
+Physics publication data typically allows 1 or 2 digits for uncertainties.
 Two Significant Figures (leading 2 digits of uncertainty 10–34) → 2-digit uncertainties, e.g., 1.2333±0.3220 → 1.23(32)
 One Significant Figure (leading 2 digits of uncertainty 35–99) → 1-digit uncertainties, e.g., 1.2333±0.3680 → 1.2(4)
+Special case: for half-lives or lifetimes, two significant figures with leading 2 digits of uncertainty 35-99 are allowed.
 
 ### Uncertainty Format in Data Record Fields
 
@@ -478,7 +453,7 @@ Format: Plain numbers only (NO `{I}` notation, NO braces).
 #### Extended Uncertainty Fields (Up to 6 Characters for Asymmetric Uncertainties)
 
 -   **DT field** (cols 50-55): Half-life uncertainties, supports asymmetric format.
-    -   Symmetric: `"14    "` (digits + spaces), Asymmetric: `"+3-4  "`, `"+19-3 "`, `"+13-28"`.
+    -   Symmetric: `"14    "` (digits + spaces), Asymmetric: `"+3-4  "`, `"+19-8 "`, `"+13-28"`.
 -   **DMR field** (cols 50-55): Mixing ratio uncertainties, supports asymmetric format.
     -   Symmetric: `"25    "` (value + spaces), Asymmetric: `"+5-3 "`, `"+21-18"`.
     -   For source data using the Rose and Brink (1967) sign convention, reverse the sign of the quoted mixing ratio before entering it into ENSDF. Reverse the asymmetric uncertainty order at the same time so the ENSDF value keeps the correct upper and lower bounds. Example: -0.27$_{-0.04}^{+0.03}$ becomes +0.27$_{+0.04}^{-0.03}$ in ENSDF.
@@ -488,7 +463,7 @@ Format: Plain numbers only (NO `{I}` notation, NO braces).
 -   Single digits in 2-column fields: MUST be padded with trailing space.
 -   Double digits in 2-column fields: Fill both columns completely.
 -   Asymmetric uncertainties: Use +X-Y format in 6-character fields (DT, DMR).
--   **FORBIDDEN:** "123" in 2-column fields (corrupts adjacent data).
+-   **FORBIDDEN:** "123" not allowed in either 2-column fields (corrupts adjacent data) or in 6-column fields.
 -   **Rounding carry-over:** When 1 sig fig rounding carries to the next decimal place (e.g., ±0.0098 → ±0.010), the field value is `10` and the main value rounds to 3 decimal places. This `10` represents ±0.010 at 3dp precision, not 2 significant figures.
 
 #### Scientific Notation Format
@@ -600,7 +575,7 @@ print('Length:', len(header))
 
 **The Sacred Workflow** (MUST Follow for Every Single Edit):
 1.  **EDIT** → Make ONE precise change to ONE field.
-2.  **VALIDATE** → Run ruler on that exact line: `python scripts/ensdf_1line_ruler.py --line "your 80-char line"`.
+2.  **VALIDATE** → Run ruler on that exact line: `python .github/scripts/ensdf_1line_ruler.py --line "your 80-char line"`.
 3.  **CONFIRM** → Verify exit code 0 and check ruler output.
 4.  **REPEAT** → Move to next edit only after confirmation.
 
@@ -614,11 +589,11 @@ print('Length:', len(header))
 
 #### Before Any Edit
 
-1.  Run `python scripts/column_calibrate.py "filename.ens"` (MANDATORY).
+1.  Run `python .github/scripts/column_calibrate.py "filename.ens"` (MANDATORY).
     -   Validates L-field positioning (column 56), S-field left-justification (columns 65-74).
     -   Verifies comment flags at column 77.
     -   Reports data-record line-length issues (L/G/E/B/DP records).
-2.  Run `python scripts/check_gamma_ordering.py "filename.ens"` (MANDATORY).
+2.  Run `python .github/scripts/check_gamma_ordering.py "filename.ens"` (MANDATORY).
     -   Verifies ascending energy order for L-records and G-records.
 3.  Manual verification: `column_calibrate.py` does NOT check DP, B, or E record formatting.
 4.  Read current file state (never assume file structure).
@@ -627,7 +602,7 @@ print('Length:', len(header))
 
 #### During Each Edit
 
-Run ruler for each changed line: `python scripts/ensdf_1line_ruler.py --line "your 80-char line"`
+Run ruler for each changed line: `python .github/scripts/ensdf_1line_ruler.py --line "your 80-char line"`
 -   MANDATORY for every line you edit.
 -   Immediate visual ruler, length, and field validation.
 -   Must verify exit code 0 before proceeding to next edit.
@@ -639,17 +614,17 @@ Repeat validation sequence (steps 1-2 from "Before Any Edit" section).
 ### ENSDF 1-Line Ruler Tool
 
 **Usage Modes:**
--   **Single line check:** `python scripts/ensdf_1line_ruler.py --line "your exact 80-char line"`
+-   **Single line check:** `python .github/scripts/ensdf_1line_ruler.py --line "your exact 80-char line"`
     -   Quick ruler display, length check, immediate validation feedback.
     -   USE THIS for every line you edit (essential AI workflow step).
--   **File scan:** `python scripts/ensdf_1line_ruler.py --file path/to/file.ens [--show-only-wrong]`
+-   **File scan:** `python .github/scripts/ensdf_1line_ruler.py --file path/to/file.ens [--show-only-wrong]`
     -   Checks all data records (L, G, E, B, DP records); exit code 1 if any errors found.
     -   Use `--show-only-wrong` to quickly identify problem lines only.
 
 ### Column Calibration Tool (column_calibrate.py)
 
 Comprehensive ENSDF field validation and data-record line-length checking:
--   **Basic validation:** `python scripts/column_calibrate.py "file.ens"`
+-   **Basic validation:** `python .github/scripts/column_calibrate.py "file.ens"`
     -   Prints 80-column ruler with field boundaries.
     -   Checks field positioning and reports line-length issues.
 -   **Optional auto-fix:** `--fix` flag can pad/trim spaces to exactly 80-character line lengths.
@@ -662,8 +637,8 @@ Comprehensive ENSDF field validation and data-record line-length checking:
 ### Energy Ordering Tool (check_gamma_ordering.py)
 
 Validates ascending energy order for L-records and G-records:
--   **Basic check:** `python scripts/check_gamma_ordering.py "file.ens"`
--   **Multiple files:** `python scripts/check_gamma_ordering.py "A35/K35/new/*.ens" --summary`
+-   **Basic check:** `python .github/scripts/check_gamma_ordering.py "file.ens"`
+-   **Multiple files:** `python .github/scripts/check_gamma_ordering.py "A35/K35/new/*.ens" --summary`
 -   **Verbose output:** Add `--verbose` flag for detailed checking process.
 -   **Exit codes:** 0 = correct ordering; 1 = ordering violations found.
 
@@ -691,47 +666,9 @@ Validates ascending energy order for L-records and G-records:
 
 
 
-## 5. Tabular Data Extraction and Data Entry Quality Assurance
+## 5. Data Extraction and Entry Quality Assurance
 
 **CRITICAL REQUIREMENT:** For ALL numerical data extraction/entry tasks, you MUST execute BOTH quality assurance checks before claiming task completion: Bidirectional Positional Check and Random Spot Check.
-
-### Trigger Conditions
-
-Execute these checks immediately when any of the following apply:
--   The task involves entering ≥30 numeric data points.
--   The request mentions "data entry," "extract data," or "format tabular data."
--   Bulk numeric input from source tables, figures, or publications is required.
--   Arithmetic-intensive work (calculations, conversions, averaging) is performed.
-
-### Forbidden Behaviors
-
--   Claiming "task complete" without executing both checks.
--   Skipping checks because data "looks correct."
--   Performing checks mentally without documented evidence.
--   Using <100% verification rates (all sampled entries must pass).
-
----
-
-### Critical AI Weakness Mitigation: Column Alignment and Blank Cell Handling
-
-### Mandatory Bidirectional Positional Check
-1. List all header columns explicitly, including blank positions
-2. Count blank cells as positional placeholders
-3. Forward verification: Column header → data column; Row header → data row
-4. Backward verification: data column → column header; data row → row header
-5. Arithmetic validation: verify calculations account for blank-cell shifts
-
-1.  **Column alignment:** Explicitly map ALL columns, including blank ones. Never assume positions based on visible data alone.
-2.  **Blank cells:** Count blank cells meticulously. Each blank cell shifts all subsequent column positions and can cause catastrophic data misalignment.
-3.  **Bidirectional verification:** Always cross-check both forward counting (header to data) and backward mapping (data to header) to ensure accurate alignment.
-4.  **Critical column mapping:** When fixing a quantity's position to the correct columns, NEVER shift other field values to wrong columns. Only adjust spacing between fields (never move field data to incorrect columns).
-
-#### Example Failure Prevention
-
-```text
-CSV Header Row: Name,Age,,City,Score
-Data Row: John,25,,NYC,95
-```
 
 ### Mandatory Random Spot-Check Protocol
 
@@ -744,8 +681,8 @@ Data Row: John,25,,NYC,95
 -   **Evidence required:** Generate a verification script showing:
     -   Total entry count.
     -   Sample size calculation (e.g., "200 entries → 15% = 30 samples").
-    -   Randomly selected row or line numbers.
-    -   Source data values for each sample.
+    -   Randomly selected entered data.
+    -   Trace back to source data for each sample.
     -   Verification results (PASS/FAIL per sample).
 
 #### Verification Checklist (100% Pass Rate Required)
@@ -770,7 +707,7 @@ If any errors are found:
 #### Workflow Integration
 
 -   Execute after automated validation passes (`column_calibrate.py` and `check_gamma_ordering.py`).
--   Execute after the Bidirectional Positional Check confirms endpoints.
+-   Execute after the Bidirectional Positional Check and Random Spot Check pass with 100% accuracy.
 -   Execute before claiming "task completed successfully."
 -   Document findings in the compliance checklist for user verification.
 
@@ -792,16 +729,6 @@ If any errors are found:
 -   **Hyphenation Rule:** [Number]-[Unit]-[Descriptor] [Noun]. Hyphenate compound adjectives occurring before a noun (e.g., "x-ray diffraction," "4-mm-long gas cell," "R-matrix theory"). Do not hyphenate when they are not adjectives before nouns (e.g., "emitted by x rays," "was 4 mm long").
 -   **Consistency:** Always hyphenate "L-transfers" and "half-life."
 
-### General Comment Ordering at the beginning of Adopted.ens Files
-
-Order comments as follows:
-1.  **Isotope Discovery:** Experimental details and references.
-2.  **Production:** Methods and studies.
-3.  **Decay Measurements:** Half-life and decay modes.
-4.  **Radius Measurement:** Nuclear radius determinations.
-5.  **Mass Measurements:** Mass spectrometry and Q-values.
-6.  **Theoretical Calculations:** Models and predictions (always last).
-
 ---
 
 ## Document Structure
@@ -811,6 +738,6 @@ This document consists of six main sections:
 1. **ENSDF Comment Text Format Standards:** Superscripts, subscripts, Greek letters, mathematical symbols, and NSR citation format.
 2. **ENSDF 80-Column Format Standards:** NUCID field rules, L/G/B/E/A/DP record specifications, and critical formatting rules.
 3. **ENSDF Uncertainty Notation:** Data record fields (plain numbers) and comment lines ({In} notation).
-4. **ENSDF File Editing Workflow:** File protection, Mandatory Edit-Validate-Repeat Workflow, validation tools, Tools and Workflows section, and editing methodology.
+4. **ENSDF File Editing Workflow:** File protection, edit-validate-repeat workflow, validation tools, and editing methodology.
 5. **Tabular Data Extraction and Data Entry Quality Assurance:** Trigger conditions, bidirectional positional checks, random spot-check validation, and error discovery procedures.
-6. **Academic Standards:** Professional English grammar, text formatting conventions, and comment ordering for Adopted ENSDF files.
+6. **Academic Standards:** Professional English grammar and text formatting conventions.

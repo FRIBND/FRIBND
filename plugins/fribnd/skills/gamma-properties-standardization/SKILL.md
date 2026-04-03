@@ -88,9 +88,9 @@ Read the target file. Identify levels with M, MR, A2/A4, or POL data in comments
 ### 5. Validate
 
 ```bash
-python scripts/ensdf_1line_ruler.py --file "FILE_PATH" --show-only-wrong
-python scripts/column_calibrate.py "FILE_PATH"
-python scripts/check_gamma_ordering.py "FILE_PATH"
+python .github/scripts/ensdf_1line_ruler.py --file "FILE_PATH" --show-only-wrong
+python .github/scripts/column_calibrate.py "FILE_PATH"
+python .github/scripts/check_gamma_ordering.py "FILE_PATH"
 ```
 
 All must return exit code 0.

@@ -113,7 +113,7 @@ For transitions quoted as `E_gamma|g to/from E_level`, verify:
 
 ### Step 1: Run Detection
 ```bash
-python scripts/check_quoted_values.py "path/to/adopted.ens"
+python .github/scripts/check_quoted_values.py "path/to/adopted.ens"
 ```
 
 Optional flags: `--tolerance N` (default 1.0 keV search window), `--debug` (verbose diagnostics)
@@ -132,7 +132,7 @@ Fix ONLY comment text (`cL`, `2cL`, `3cL` lines) using `replace_string_in_file`.
 
 ### Step 4: Re-verify
 ```bash
-python scripts/check_quoted_values.py "path/to/adopted.ens"
+python .github/scripts/check_quoted_values.py "path/to/adopted.ens"
 ```
 Confirm zero errors.
 
