@@ -42,7 +42,8 @@ As of 2026-03-26:
 
 
 #### FRIBND AI Agent Architecture
-<img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/78fe61bd-53aa-483e-97ab-dda550b59814" />
+<img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/63ee8a24-89d5-45df-b60e-237094add77f" />
+
 
 
 **Harness Engineering**
