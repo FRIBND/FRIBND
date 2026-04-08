@@ -1,6 +1,5 @@
-Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group (nucleardata@frib.msu.edu).
+**ENSDF-Agent:** Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group (nucleardata@frib.msu.edu).
 
-**ENSDF-Agent:**
 ## Overview
 
 The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows.
