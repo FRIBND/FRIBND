@@ -4,7 +4,7 @@
 
 Use this prompt for one 1964Gl04 resonance table at a time.
 
-Before starting, reread `copilot-instructions.md` and `agents/FRIBND.agent.md` from start to end.
+Before starting, reread `copilot-instructions.md` and `agents/ENSDF-Agent.agent.md` from start to end.
 
 - Source: `1964GL04_Ep*.md`
 - Target: the matching resonance level block in the adopted ENSDF file

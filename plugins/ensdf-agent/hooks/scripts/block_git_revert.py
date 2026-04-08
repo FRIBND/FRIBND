@@ -53,8 +53,8 @@ def main():
         return
 
     reason = (
-        "BLOCKED by FRIBND security hook.\n\n"
-        "From FRIBND.agent.md (Error Recovery Protocol — Mandatory):\n"
+        "BLOCKED by ENSDF-Agent security hook.\n\n"
+        "From ENSDF-Agent.agent.md (Error Recovery Protocol — Mandatory):\n"
         "  \"Nuclear data tasks require high-precision work, not typical\n"
         "  software development tasks. Do NOT use `git restore` or\n"
         "  `git checkout` to fix mistakes. You must identify and fix errors\n"

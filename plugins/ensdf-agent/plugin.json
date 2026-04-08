@@ -1,12 +1,12 @@
 {
-  "name": "fribnd",
+  "name": "ensdf-agent",
   "version": "0.0.1",
-  "description": "FRIBND AI Agent for ENSDF",
+  "description": "ENSDF-Agent",
   "author": {
     "name": "FRIB Nuclear Data Group"
   },
-  "homepage": "https://github.com/FRIBND/FRIBND",
-  "repository": "https://github.com/FRIBND/FRIBND",
+  "homepage": "https://github.com/ENSDF-Agent/ENSDF-Agent",
+  "repository": "https://github.com/ENSDF-Agent/ENSDF-Agent",
   "license": "MIT",
   "keywords": [
         "ensdf",

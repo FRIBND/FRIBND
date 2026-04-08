@@ -1,4 +1,4 @@
-**`FRIBND` AI Agent:**
+**`ENSDF-Agent`:**
 Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group.
 
 ## Overview
@@ -6,17 +6,17 @@ Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group.
 The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows.
 Developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
 
-Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the FRIBND AI Agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows used by ENSDF evaluators.
+Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the ENSDF-Agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows used by ENSDF evaluators.
 
 ## Development Timeline
 
-- 2026-03-25: FRIBND Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplaces.
+- 2026-03-25: ENSDF-Agent Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplace.
 
-- 2026-03-04: FRIBND became available as an open-source repository at https://github.com/FRIBND/FRIBND.
+- 2026-03-04: ENSDF-Agent became available as an open-source repository at https://github.com/FRIBND/ENSDF-Agent.
 
-- 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into the FRIBND AI Agent to perform specific tasks within ENSDF workflows.
+- 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into ENSDF-Agent to perform specific tasks within ENSDF workflows.
 
-- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to the FRIBND Custom AI Agent.
+- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to ENSDF AI Agent.
 
 - 2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
 
@@ -26,10 +26,10 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 ## Installation
 
-1. Configure plugin marketplaces by clicking "Add Item" and entering `FRIBND/FRIBND` in the `setting(chat.plugins.marketplaces)` setting.
-2. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins FRIBND` in the search field.
+1. Configure plugin marketplaces by clicking "Add Item" and entering `ENSDF-Agent/ENSDF-Agent` in the `setting(chat.plugins.marketplaces)` setting.
+2. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins ENSDF-Agent` in the search field.
    - Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
-3. Click **Install** to install the FRIBND Plugin in your user profile.
+3. Click **Install** to install the ENSDF-Agent Plugin in your user profile.
 
 ## Caveats
 
@@ -41,7 +41,7 @@ As of 2026-03-26:
 
 
 
-#### FRIBND AI Agent Architecture
+#### ENSDF-Agent Architecture
 <img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/63ee8a24-89d5-45df-b60e-237094add77f" />
 
 
