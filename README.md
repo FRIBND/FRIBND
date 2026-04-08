@@ -1,12 +1,12 @@
-**ENSDF-Agent:**
-Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group.
+Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group (nucleardata@frib.msu.edu).
 
+**ENSDF-Agent:**
 ## Overview
 
 The first AI Agent designed for Evaluated Nuclear Structure Data File (ENSDF) workflows.
 Developed and refined through daily evaluation tasks at the Nuclear Data Group at the Facility for Rare Isotope Beams (FRIB).
 
-Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, the ENSDF-Agent integrates rapidly evolving Large Language Models (LLMs) into the routine 80-column editing and formatting workflows used by ENSDF evaluators.
+Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copilot, ENSDF-Agent integrates the power of rapidly advancing Large Language Models (LLMs) into the routine workflows of nuclear data evaluators.
 
 ## Development Timeline
 
