@@ -1,4 +1,4 @@
-**`ENSDF-Agent`:**
+**ENSDF-Agent:**
 Part of the AI/ML Technical Innovation at the FRIB Nuclear Data Group.
 
 ## Overview
