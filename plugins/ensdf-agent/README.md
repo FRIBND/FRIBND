@@ -39,9 +39,6 @@ As of 2026-03-26:
 - Agent Skills performance and reliability vary based on the underlying LLM capabilities and the complexity of the task.
 
 
-#### ENSDF-Agent Architecture
-<img width="2752" height="1536" alt="Architecture" src="https://github.com/user-attachments/assets/63ee8a24-89d5-45df-b60e-237094add77f" />
-
 ## What's Shipped
 
 ### Agent
