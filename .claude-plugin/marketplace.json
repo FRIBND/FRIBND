@@ -15,8 +15,8 @@
       "description": "ENSDF-Agent for nuclear data evaluation",
       "version": "0.0.1",
       "license": "MIT",
-      "homepage": "https://github.com/ENSDF-Agent/ENSDF-Agent",
-      "repository": "https://github.com/ENSDF-Agent/ENSDF-Agent",
+      "homepage": "https://github.com/FRIBND/ENSDF-Agent",
+      "repository": "https://github.com/FRIBND/ENSDF-Agent",
       "keywords": [
         "ensdf",
         "frib",

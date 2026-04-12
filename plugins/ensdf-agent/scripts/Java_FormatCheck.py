@@ -102,7 +102,7 @@ def run_formatcheck(ens_path: str, open_after: bool = False, use_vscode: bool = 
 def main(argv: list[str]) -> int:
     if len(argv) < 2:
         print("Usage:")
-        print("  python scripts/Java_FormatCheck.py <path-to-file>.ens [--open] [--system]")
+        print("  python .github/Java_FormatCheck.py <path-to-file>.ens [--open] [--system]")
         print("Notes:")
         print("  - Output is written to D:/X/ND/Files/formatcheck.fmt")
         return 1

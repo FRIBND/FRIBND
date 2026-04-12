@@ -5,8 +5,8 @@
   "author": {
     "name": "FRIB Nuclear Data Group"
   },
-  "homepage": "https://github.com/ENSDF-Agent/ENSDF-Agent",
-  "repository": "https://github.com/ENSDF-Agent/ENSDF-Agent",
+  "homepage": "https://github.com/FRIBND/ENSDF-Agent",
+  "repository": "https://github.com/FRIBND/ENSDF-Agent",
   "license": "MIT",
   "keywords": [
         "ensdf",

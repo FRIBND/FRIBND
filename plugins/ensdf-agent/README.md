@@ -13,7 +13,7 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 - 2026-03-25: ENSDF-Agent Version 0.0.1, with 2 Agent Hooks and 24 Agent Skills, was released as an Agent Plugin via the Microsoft VS Code Plugin Marketplaces.
 
-- 2026-03-04: ENSDF-Agent became available as an open-source repository at https://github.com/ENSDF-Agent/ENSDF-Agent.
+- 2026-03-04: ENSDF-Agent became available as an open-source repository at https://github.com/FRIBND/ENSDF-Agent.
 
 - 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into ENSDF-Agent to perform specific tasks within ENSDF workflows.
 
@@ -27,7 +27,7 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 ## Installation
 
-1. Configure plugin marketplaces by clicking "Add Item" and entering `ENSDF-Agent/ENSDF-Agent` in the `setting(chat.plugins.marketplaces)` setting.
+1. Configure plugin marketplaces by clicking "Add Item" and entering `FRIBND/ENSDF-Agent` in the `setting(chat.plugins.marketplaces)` setting.
 2. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins ENSDF-Agent` in the search field.
    - Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
 3. Click **Install** to install the ENSDF-Agent Plugin in your user profile.

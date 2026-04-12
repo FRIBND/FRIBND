@@ -60,7 +60,7 @@ def find_all_ens_paths(payload):
     paths = set()
     tool_input = payload.get("tool_input") or {}
 
-    # Environment variable override retained for compatibility with older integrations
+    # Environment variable override (used by some Claude Code integrations)
     env_path = os.environ.get("TOOL_INPUT_FILE_PATH", "")
     if env_path and env_path.lower().endswith(".ens"):
         paths.add(env_path)
@@ -170,39 +170,13 @@ def comment_only_edit(payload):
 
 
 def find_ruler_script(payload):
-    """Locate ensdf_1line_ruler.py, preferring the plugin's bundled copy.
-
-    VS Code sets the CLAUDE_PLUGIN_ROOT environment variable for all plugin
-    hook processes, pointing to the plugin's installed (cached) directory.
-    This is reliable regardless of where VS Code installed the plugin.
-    """
-    # 1. VS Code-provided plugin root (most reliable for installed plugins)
-    env_root = os.environ.get("CLAUDE_PLUGIN_ROOT", "")
-    if env_root:
-        env_candidate = os.path.join(env_root, "scripts", "ensdf_1line_ruler.py")
-        if os.path.isfile(env_candidate):
-            return env_candidate
-
-    # 2. __file__-relative path (works during local development / direct invocation)
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    plugin_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plugin_candidate = os.path.join(plugin_root, "scripts", "ensdf_1line_ruler.py")
-    if os.path.isfile(plugin_candidate):
-        return plugin_candidate
-
-    # 3. Workspace scripts/ directory
+    """Locate ensdf_1line_ruler.py, preferring the cwd provided by VS Code."""
     cwd = payload.get("cwd", "") or os.getcwd()
-    workspace_candidate = os.path.join(cwd, "scripts", "ensdf_1line_ruler.py")
-    if os.path.isfile(workspace_candidate):
-        return workspace_candidate
-
-    # 4. Legacy workspace path
-    legacy_candidate = os.path.join(cwd, ".github", "scripts", "ensdf_1line_ruler.py")
-    if os.path.isfile(legacy_candidate):
-        return legacy_candidate
-
-    # Default: plugin-bundled (causes a clear missing-file error if not found)
-    return env_candidate if env_root else plugin_candidate
+    candidate = os.path.join(cwd, ".github", "scripts", "ensdf_1line_ruler.py")
+    if os.path.isfile(candidate):
+        return candidate
+    # Fallback to relative path (works when subprocess cwd is workspace root)
+    return os.path.join(".github", "scripts", "ensdf_1line_ruler.py")
 
 
 def run_ruler(ruler_script, file_path):
@@ -262,7 +236,7 @@ def main():
             "Required steps:\n"
             "  1. Identify the misaligned field from the error output below.\n"
             "  2. Fix ONE field at a time using replace_string_in_file.\n"
-            '  3. Re-run: python scripts/ensdf_1line_ruler.py --line "<fixed line>"\n'
+            '  3. Re-run: python .github/scripts/ensdf_1line_ruler.py --line "<fixed line>"\n'
             "  4. Confirm exit code 0 before proceeding to the next edit.\n\n"
             "Do NOT make multiple edits before validating each one.\n\n"
             f"Validation errors:\n{error_text}"

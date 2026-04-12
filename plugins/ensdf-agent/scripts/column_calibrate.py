@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 ENSDF Column Calibration Script - Comprehensive ENSDF Validation
 ===============================================================
@@ -1332,7 +1332,7 @@ def validate_ri_field(filename):
         print(f"[ERROR] ERRORS: {ri_errors} RI field positioning errors found!")
         print()
         print("CRITICAL FIX NEEDED:")
-        print("  Run: python scripts/fix_ri_positioning.py \"filename.ens\"")
+        print("  Run: python .github/fix_ri_positioning.py \"filename.ens\"")
         print("  Or manually insert space at column 22 for each error")
         print()
         return False

@@ -1,13 +1,13 @@
 {
   "chat.plugins.enabled": true,
   "chat.plugins.marketplaces": [
-    "ENSDF-Agent/ENSDF-Agent"
+    "FRIBND/ENSDF-Agent"
   ],
   "extraKnownMarketplaces": {
     "ensdf-agent": {
       "source": {
         "source": "github",
-        "repo": "ENSDF-Agent/ENSDF-Agent"
+        "repo": "FRIBND/ENSDF-Agent"
       }
     }
   },

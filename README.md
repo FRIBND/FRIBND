@@ -15,20 +15,46 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
 
 - 2026-02-23: Agent Skills were introduced as modular, portable capabilities that can be dynamically loaded into ENSDF-Agent to perform specific tasks within ENSDF workflows.
 
-- 2025-11-14: The FRIBND Custom Agent Chat Mode was upgraded to ENSDF AI Agent.
+- 2025-11-14: The ENSDF-Agent Custom Agent Chat Mode was upgraded to ENSDF-Agent.
 
-- 2025-10-30: The FRIBND AI Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
+- 2025-10-30: ENSDF-Agent was introduced at the 2025 U.S. Nuclear Data Program Meeting.
 
-- 2025-08-14: The FRIBND AI Agent was first introduced at the 2025 Low Energy Community Meeting.
+- 2025-08-14: ENSDF-Agent was first introduced at the 2025 Low Energy Community Meeting.
 
-- 2025-08-06: The initial version of the FRIBND Custom Agent Chat Mode was posted within https://github.com/sunlijie-msu/ENSDF.
+- 2025-08-06: The initial version of the ENSDF-Agent Custom Agent Chat Mode was posted within https://github.com/sunlijie-msu/ENSDF.
 
 ## Installation
 
-1. Configure plugin marketplaces by clicking "Add Item" and entering `ENSDF-Agent/ENSDF-Agent` in the `setting(chat.plugins.marketplaces)` setting.
+1. Configure plugin marketplaces by clicking "Add Item" and entering `FRIBND/ENSDF-Agent` in the `setting(chat.plugins.marketplaces)` setting.
 2. Open the Extensions view (`kb(workbench.view.extensions)`) and enter `@agentPlugins ENSDF-Agent` in the search field.
    - Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
 3. Click **Install** to install the ENSDF-Agent Plugin in your user profile.
+
+## Maintainer Sync
+
+To sync the plugin payload from your local agent source at `D:\X\ND\ENSDF\.github`, run:
+
+```powershell
+.\sync-plugin-from-local-agent.ps1
+```
+
+Python alternative:
+
+```powershell
+python .\sync_plugin_from_local_agent.py
+```
+
+To preview changes without copying or deleting files:
+
+```powershell
+.\sync-plugin-from-local-agent.ps1 -DryRun
+```
+
+```powershell
+python .\sync_plugin_from_local_agent.py --dry-run
+```
+
+The script syncs `agents`, `copilot-instructions.md`, `hooks`, `prompts`, `scripts`, and `skills`; it excludes `docs`, `temp`, and `__pycache__`; and it preserves plugin-specific files such as `plugin.json`, `hooks.json`, and the plugin README.
 
 ## Caveats
 
