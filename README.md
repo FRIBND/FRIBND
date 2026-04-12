@@ -30,32 +30,6 @@ Built on the open-source platforms Microsoft Visual Studio Code and GitHub Copil
    - Alternatively, select the **More Actions** (three dots) icon in the Extensions sidebar and choose **Views** > **Agent Plugins**.
 3. Click **Install** to install the ENSDF-Agent Plugin in your user profile.
 
-## Maintainer Sync
-
-To sync the plugin payload from your local agent source at `D:\X\ND\ENSDF\.github`, run:
-
-```powershell
-.\sync-plugin-from-local-agent.ps1
-```
-
-Python alternative:
-
-```powershell
-python .\sync_plugin_from_local_agent.py
-```
-
-To preview changes without copying or deleting files:
-
-```powershell
-.\sync-plugin-from-local-agent.ps1 -DryRun
-```
-
-```powershell
-python .\sync_plugin_from_local_agent.py --dry-run
-```
-
-The script syncs `agents`, `copilot-instructions.md`, `hooks`, `prompts`, `scripts`, and `skills`; it excludes `docs`, `temp`, and `__pycache__`; and it preserves plugin-specific files such as `plugin.json`, `hooks.json`, and the plugin README.
-
 ## Caveats
 
 As of 2026-03-26:
@@ -63,7 +37,6 @@ As of 2026-03-26:
 - VS Code Agent Plugins do not support workspace-level `copilot-instructions.md` shipped with the plugin.
 - VS Code Agent Plugins do not support Agent-scoped hooks.
 - Agent Skills performance and reliability vary based on the underlying LLM capabilities and the complexity of the task.
-
 
 
 #### ENSDF-Agent Architecture
@@ -121,3 +94,29 @@ This framework ensures clear communication between the user, the AI, and the too
 *   **Payload Construction:** JSON Payload Built Based on the Message Array
 *   **Model Configuration:** Model Selection, Tool Definitions (JSON Schema), Token Limits, Sampling Parameters (Temperature, Top_p), Streaming Options, and Thinking Budget
 
+
+## Maintainer Sync
+
+To sync the plugin payload from your local agent source at `D:\X\ND\ENSDF\.github`, run:
+
+```powershell
+.\sync-plugin-from-local-agent.ps1
+```
+
+Python alternative:
+
+```powershell
+python .\sync_plugin_from_local_agent.py
+```
+
+To preview changes without copying or deleting files:
+
+```powershell
+.\sync-plugin-from-local-agent.ps1 -DryRun
+```
+
+```powershell
+python .\sync_plugin_from_local_agent.py --dry-run
+```
+
+The script syncs `agents`, `copilot-instructions.md`, `hooks`, `prompts`, `scripts`, and `skills`; it excludes `docs`, `temp`, and `__pycache__`; and it preserves plugin-specific files such as `plugin.json`, `hooks.json`, and the plugin README.
