@@ -180,26 +180,26 @@ Example:
 
 | Field | Columns | Description |
 | :--- | :--- | :--- |
-| NUCID | 1-5 | Nucleus (e.g., " 35P " or " 35Cl") |
+| NUCID | 1–5 | Nucleus (e.g., " 35P " or " 35Cl") |
 | CONT | 6 | Continuation label |
 | SPACE | 7 | Must be blank |
 | TYPE | 8 | "G" |
 | SPACE | 9 | Must be blank |
-| E | 10-19 | Gamma energy |
-| DE | 20-21 | Energy uncertainty |
+| E | 10–19 | Gamma energy |
+| DE | 20–21 | Energy uncertainty |
 | SPACE | 22 | Readability space |
-| RI | 23-29 | Relative photon intensity (starts at col 23) |
-| DRI | 30-31 | Uncertainty in RI (including GT, LT markers) |
+| RI | 23–29 | Relative photon intensity (starts at col 23) |
+| DRI | 30–31 | Uncertainty in RI (including GT, LT markers) |
 | SPACE | 32 | Readability space |
-| M | 33-41 | Multipolarity |
-| MR | 42-49 | Mixing ratio |
-| DMR | 50-55 | Uncertainty in MR |
-| CC | 56-62 | Conversion coefficient |
-| DCC | 63-64 | Uncertainty in CC |
-| TI | 65-74 | Total transition intensity |
-| DTI | 75-76 | Uncertainty in TI |
+| M | 33–41 | Multipolarity |
+| MR | 42–49 | Mixing ratio |
+| DMR | 50–55 | Uncertainty in MR |
+| CC | 56–62 | Conversion coefficient |
+| DCC | 63–64 | Uncertainty in CC |
+| TI | 65–74 | Total transition intensity |
+| DTI | 75–76 | Uncertainty in TI |
 | C | 77 | **Comment flag** (A-Z, a-z, *, &, @) - See G-Record Flag Rules below |
-| SPACE | 78-79 | Must be blank |
+| SPACE | 78–79 | Must be blank |
 | Q | 80 | **Additional indicator** (space, ?, S) - See G-Record Indicator Rules below |
 
 ### Critical ENSDF Formatting Rules
@@ -223,13 +223,13 @@ Example:
 - **cG, 2cG, 3cG lines:** Form a unified comment block for that G-record.
 - When multiple G-comment identifiers are present, order them as follows: `E$ → RI$ → M$ → MR$ → other identifiers`.
 
-**Continuation Records and Comments (Column 6)**
-
+**Integral Understanding of Continuation Records and Comments (Column 6)**
 - Column 6 contains the continuation marker: blank for the first record and alphanumeric for continuation records.
 - Common continuation records include `2 L` and `F L` for L-records, and `2 G` and `B G` for G-records.
 - Common continuation comments include `2cL` and `3cL` for L-comment lines, and `2cG` and `3cG` for G-comment lines.
 - Continuation records must remain attached to, and apply only to, the immediately preceding record type (L or G).
 - Continuation comments must remain attached to the immediately preceding comment line.
+- Multi-line `c` comments (with `2c`, `3c` continuation markers) must be fully concatenated as an **Inseparable Whole** during data editing and parsing.
 - `2cL` must follow `cL`, and `3cL` must follow `2cL`, etc.
 - `2cG` must follow `cG`, and `3cG` must follow `2cG`, etc.
 - Continuation records have their own text-format standards. Do not use comment text format in continuation records. Example: `35CA2 L %EC+%B+=100$%ECP=95.8 3$%EC2P=4.2 3`.
@@ -243,7 +243,8 @@ Example:
 -   **Formatting:** Values start at the leftmost column of the field, padded with trailing spaces to fill field width.
 
 #### Energy Ordering Requirement
-**Requirement:** 
+**Requirement:**
+
 -   L-records and G-records MUST be in ascending energy order.
 -   **Consequence:** Violations break automated ENSDF parsers and database ingestion.
 -   **Common error:** Inserting new levels or gammas without reordering by energy.
@@ -255,7 +256,7 @@ Example:
 -   `*` (asterisk): Denotes a multiply-placed gamma ray.
 -   `&` (ampersand): Denotes a multiply-placed transition with intensity not divided.
 -   `@` (at symbol): Denotes a multiply-placed transition with intensity suitably divided.
-Note: Multiple identical gamma energies appear in multiple level blocks should be flagged with either `*`, `&`, or `@`.
+Note: Multiple identical gamma energies appearing in multiple level blocks should be flagged with either `*`, `&`, or `@`.
 -   `Space`: No comment flag.
 -   **FORBIDDEN:** Question mark (`?`) is NOT allowed in column 77.
 
@@ -278,19 +279,19 @@ Example:
 
 | Field | Columns | Description |
 | :--- | :--- | :--- |
-| NUCID | 1-5 | Nucleus (e.g., " 35Cl" or " 35P ") |
+| NUCID | 1–5 | Nucleus (e.g., " 35Cl" or " 35P ") |
 | CONT | 6 | Continuation label (blank) |
 | SPACE | 7 | Must be blank |
 | D | 8 | "D" for delayed particle |
 | P | 9 | "P" for proton |
 | SPACE | 10 | Readability space |
-| EP | 11-19 | Proton energy in keV |
-| DE | 20-21 | Energy uncertainty |
+| EP | 11–19 | Proton energy in keV |
+| DE | 20–21 | Energy uncertainty |
 | SPACE | 22 | Readability space |
-| IP | 23-29 | Proton intensity in percent |
-| DIP | 30-31 | Uncertainty in IP |
+| IP | 23–29 | Proton intensity in percent |
+| DIP | 30–31 | Uncertainty in IP |
 | SPACE | 32 | Readability space |
-| EI | 33-39 | Energy of emitting level in keV |
+| EI | 33–39 | Energy of emitting level in keV |
 
 **Critical DP Format Rules:**
 -   Readable spaces at columns 10, 22, and 32 for human readability.
@@ -307,28 +308,27 @@ Example:
 
 | Field | Columns | Description |
 | :--- | :--- | :--- |
-| NUCID | 1-5 | Nucleus (e.g., " 35P " or " 35Cl") |
+| NUCID | 1–5 | Nucleus (e.g., " 35P " or " 35Cl") |
 | CONT | 6 | Continuation label |
 | SPACE | 7 | Must be blank |
 | TYPE | 8 | "B" for beta minus |
 | SPACE | 9 | Must be blank |
-| E | 10-19 | Endpoint energy of β⁻ in keV (given only if measured) |
-| DE | 20-21 | Energy uncertainty |
+| E | 10–19 | Endpoint energy of β⁻ in keV (no need to edit) |
+| DE | 20–21 | Energy uncertainty |
 | SPACE | 22 | Readability space |
-| IB | 23-29 | Intensity of β⁻-decay branch |
-| DIB | 30-31 | Uncertainty in IB |
-| SPACE | 32-41 | Must be blank |
+| IB | 23–29 | Intensity of β⁻-decay branch |
+| DIB | 30–31 | Uncertainty in IB |
+| SPACE | 32–41 | Must be blank |
 | SPACE | 42 | Readability space |
-| LOGFT | 43-49 | The log ft for the β⁻ transition |
-| DFT | 50-55 | Uncertainty in LOGFT |
-| SPACE | 56-76 | Must be blank |
+| LOGFT | 43–49 | The log ft for the β⁻ transition |
+| DFT | 50–55 | Uncertainty in LOGFT |
+| SPACE | 56–76 | Must be blank |
 | C | 77 | Comment flag ('C' denotes coincidence, '?' denotes probable coincidence) |
-| UN | 78-79 | Forbiddenness classification ('1U', '2U' for unique forbidden, blank = allowed) |
+| UN | 78–79 | Forbiddenness classification ('1U', '2U' for unique forbidden, blank = allowed) |
 | Q | 80 | '?' denotes uncertain or questionable beta minus decay |
 
 **Critical B-Record Rules:**
 -   Must follow LEVEL record for the level which is fed by the beta minus decay.
--   E field given only if measured (endpoint energy of beta minus transition).
 -   IB intensity in same units as other intensity fields in file.
 -   LOGFT for uniqueness classification (col 78-79).
 -   Blank signifies allowed transition for forbiddenness field.
@@ -344,26 +344,26 @@ Example:
 
 | Field | Columns | Description |
 | :--- | :--- | :--- |
-| NUCID | 1-5 | Nucleus (e.g., " 35Cl" or " 35P ") |
+| NUCID | 1–5 | Nucleus (e.g., " 35Cl" or " 35P ") |
 | CONT | 6 | Continuation label |
 | SPACE | 7 | Must be blank |
 | TYPE | 8 | "E" for electron capture |
 | SPACE | 9 | Must be blank |
-| E | 10-19 | Energy for electron capture to level (if measured or deduced) |
-| DE | 20-21 | Uncertainty in E |
+| E | 10–19 | Energy for electron capture to level (no need to edit) |
+| DE | 20–21 | Uncertainty in E |
 | SPACE | 22 | Readability space |
-| IB | 23-29 | Intensity of β⁺-decay branch |
-| DIB | 30-31 | Uncertainty in IB |
-| IE | 32-39 | Intensity of electron capture branch |
-| DIE | 40-41 | Uncertainty in IE |
+| IB | 23–29 | Intensity of β⁺-decay branch |
+| DIB | 30–31 | Uncertainty in IB |
+| IE | 32–39 | Intensity of electron capture branch |
+| DIE | 40–41 | Uncertainty in IE |
 | SPACE | 42 | Readability space |
-| LOGFT | 43-49 | The log ft for (ε + β⁺) transition |
-| DFT | 50-55 | Uncertainty in LOGFT |
-| SPACE | 56-64 | Must be blank |
-| TI | 65-74 | Total (ε + β⁺) decay intensity |
-| DTI | 75-76 | Uncertainty in TI |
+| LOGFT | 43–49 | The log ft for (ε + β⁺) transition |
+| DFT | 50–55 | Uncertainty in LOGFT |
+| SPACE | 56–64 | Must be blank |
+| TI | 65–74 | Total (ε + β⁺) decay intensity |
+| DTI | 75–76 | Uncertainty in TI |
 | C | 77 | Comment flag ('C' denotes coincidence, '?' denotes probable coincidence) |
-| UN | 78-79 | Forbiddenness classification ('1U', '2U' for unique forbidden, blank = allowed) |
+| UN | 78–79 | Forbiddenness classification ('1U', '2U' for unique forbidden, blank = allowed) |
 | Q | 80 | '?' = uncertain branch, 'S' = expected or assumed transition |
 
 **Critical E-Record Rules:**
@@ -383,22 +383,22 @@ Example:
 
 | Field | Columns | Description |
 | :--- | :--- | :--- |
-| NUCID | 1-5 | Nucleus (e.g., " 35P " or "204AT") |
+| NUCID | 1–5 | Nucleus (e.g., " 35P " or "204AT") |
 | CONT | 6 | Continuation label |
 | SPACE | 7 | Must be blank |
 | TYPE | 8 | "A" for alpha decay |
 | SPACE | 9 | Must be blank |
-| E | 10-19 | Alpha energy in keV |
-| DE | 20-21 | Standard uncertainty in E |
+| E | 10–19 | Alpha energy in keV |
+| DE | 20–21 | Standard uncertainty in E |
 | SPACE | 22 | Readability space |
-| IA | 23-29 | Intensity of α-decay branch in percent of the total α decay |
-| DIA | 30-31 | Standard uncertainty in IA |
+| IA | 23–29 | Intensity of α-decay branch in percent of the total α decay |
+| DIA | 30–31 | Standard uncertainty in IA |
 | SPACE | 32 | Readability space |
-| HF | 33-39 | Hindrance factor for α decay |
-| DHF | 40-41 | Standard uncertainty in HF |
-| SPACE | 42-76 | Must be blank |
+| HF | 33–39 | Hindrance factor for α decay |
+| DHF | 40–41 | Standard uncertainty in HF |
+| SPACE | 42–76 | Must be blank |
 | C | 77 | Comment flag ('C' denotes coincidence, '?' denotes probable coincidence) |
-| SPACE | 78-79 | Must be blank |
+| SPACE | 78–79 | Must be blank |
 | Q | 80 | '?' = uncertain or questionable α branch, 'S' = expected or predicted α branch |
 
 **Critical A-Record Rules:**
@@ -420,125 +420,156 @@ Only in the Adopted Datasets: XREF (cross-reference) entries immediately followi
 
 ## 3. ENSDF Uncertainty Notation Rules
 
-**CRITICAL:** Uncertainties in data record fields and comment lines use DIFFERENT formats, but both follow an "uncertainty-in-last-digits" notation. Ensure the number of decimal places in the main value precisely matches the decimal place represented by the final digit of the uncertainty.
+### General Rules
 
-Physics publication data typically allows 1 or 2 digits for uncertainties.
-Two Significant Figures (leading 2 digits of uncertainty 10–34) → 2-digit uncertainties, e.g., 1.2333±0.3220 → 1.23(32)
-One Significant Figure (leading 2 digits of uncertainty 35–99) → 1-digit uncertainties, e.g., 1.2333±0.3680 → 1.2(4)
-Special case: for half-lives or lifetimes, two significant figures with leading 2 digits of uncertainty 35-99 are allowed.
+**CRITICAL:** Uncertainties in data-record fields and comment lines use different formats, but both follow uncertainty-in-last-digits notation. The decimal place of the final uncertainty digit must match the decimal place of the reported value.
+
+- Published nuclear data usually report uncertainties with one or two digits.
+- The uncertainty applies to the least significant reported digit of the value.
+- Use 1 significant figure when the leading two uncertainty digits are `35-99`.
+    Example: `1.2333±0.3680 -> 1.2(4)`.
+- Use 2 significant figures when the leading two uncertainty digits are `10-34`.
+    Example: `1.2333±0.3220 -> 1.23(32)`.
+- Special case: for half-lives and lifetimes, 2 significant figures may be used even when the leading two uncertainty digits are `35-99`.
+
+### ENSDF Rounding and Uncertainty Convention
+
+#### Successive (Sequential) Rounding
+
+Use successive rounding for all ENSDF values. Round one digit at a time, from right to left.
+
+#### Value Rounding Threshold: Round Half-Up (5-Up)
+
+Apply standard round-half-up for general calculated values.
+
+- Round down when the discarded digit is 0-4.
+- Round up when the discarded digit is 5-9.
+
+Examples:
+
+- `0.344 -> 0.34 -> 0.3`: the discarded `4` rounds down at each step.
+- `0.345 -> 0.35 -> 0.4`: the discarded `5` rounds up at each step.
+
+#### Uncertainty Rounding Threshold: 4-Up, 3-Down
+
+Apply the conservative 4-up rule to uncertainties only.
+
+- Round down when the discarded digit is 0-3.
+- Round up when the discarded digit is 4-9.
+
+After rounding the uncertainty, round the reported value to the same decimal place as the least significant uncertainty digit.
+
+Examples:
+
+- `100.00(333) -> 100.0(33)`: discarded `3` rounds down; uncertainty stays `33`.
+- `100.00(334) -> 100.0(34)`: discarded `4` rounds up; uncertainty becomes `34`.
+
+
+**Examples by Decimal Places:**
+
+| Value Decimals | Field Notation | Comment Notation | Meaning (± format) |
+| :--- | :--- | :--- | :--- |
+| 0 decimals | `1234  5 ` | `1234 {I5}` | 1234 ± 5 |
+| 0 decimals | `1234  26` | `1234 {I26}` | 1234 ± 26 |
+| 1 decimal | `12.3  6 ` | `12.3 {I6}` | 12.3 ± 0.6 |
+| 1 decimal | `3.6  11 ` | `3.6 {I11}` | 3.6 ± 1.1 |
+| 2 decimals | `1.23  7` | `1.23 {I7}` | 1.23 ± 0.07 |
+| 2 decimals | `1.23  21` | `1.23 {I21}` | 1.23 ± 0.21 |
+| 4 decimals | `0.0060  6` | `0.0060 {I6}` | 0.0060 ± 0.0006 |
+| 4 decimals | `0.0060  24` | `0.0060 {I24}` | 0.0060 ± 0.0024 |
 
 ### Uncertainty Format in Data Record Fields
 
-#### In Data Record Fields (L, G, E, B, DP Records)
+#### General Format
 
-Format: Plain numbers only (NO `{I}` notation, NO braces).
+Format: Plain integers only (NO `{I}` notation, NO parentheses).
 
 **Examples:**
--   Energy: `1572.0` with uncertainty `12` in DE field means 1572.0(12).
--   RI: `70.0` with uncertainty `24` in DRI field means 70.0(24).
--   T1/2: `2.29 PS` with uncertainty `14` in DT field means 2.29(14) PS.
+- Energy: `1572.0` with uncertainty `12` in DE field means 1572.0(12).
+- RI: `70.0` with uncertainty `24` in DRI field means 70.0(24).
+- T1/2: `2.29 PS` with uncertainty `14` in DT field means 2.29(14) PS.
 
-#### Standard 2-Column Uncertainty Fields (2 Digits Maximum)
+#### Standard 2-Column Uncertainty Fields (DE, DRI, DIP, DCC, DTI, DS)
 
--   **DE field** (cols 20-21): 1-2 digits with space padding.
-    -   Single digit: `"5 "` (digit + space), Double digits: `"15"` (two digits).
--   **DRI field** (cols 30-31): 1-2 digits OR special markers (G records).
-    -   Single digit: `"7 "` (digit + space), Double digits: `"24"`, Markers: `"GT"`, `"LT"`.
--   **DIP field** (cols 30-31): 1-2 digits with space padding (DP records).
-    -   Single digit: `"7 "` (digit + space), Double digits: `"17"` (two digits).
--   **DCC field** (cols 63-64): 1-2 digits with space padding.
-    -   Single digit: `"3 "` (digit + space), Double digits: `"18"` (two digits).
--   **DTI field** (cols 75-76): 1-2 digits with space padding.
-    -   Single digit: `"9 "` (digit + space), Double digits: `"42"` (two digits).
--   **DS field** (cols 75-76): 1-2 digits with space padding.
-    -   Single digit: `"2 "` (digit + space), Double digits: `"35"` (two digits).
+- **Field:** 1–2 digits with space padding.
+    - Single digit: `"5 "` (digit + space).
+    - Double digits: `"15"` (two digits).
+    - Limit markers: `"GT"`, `"LT"` (two letters).
 
-#### Extended Uncertainty Fields (Up to 6 Characters for Asymmetric Uncertainties)
 
--   **DT field** (cols 50-55): Half-life uncertainties, supports asymmetric format.
-    -   Symmetric: `"14    "` (digits + spaces), Asymmetric: `"+3-4  "`, `"+19-8 "`, `"+13-28"`.
--   **DMR field** (cols 50-55): Mixing ratio uncertainties, supports asymmetric format.
-    -   Symmetric: `"25    "` (value + spaces), Asymmetric: `"+5-3 "`, `"+21-18"`.
-    -   For source data using the Rose and Brink (1967) sign convention, reverse the sign of the quoted mixing ratio before entering it into ENSDF. Reverse the asymmetric uncertainty order at the same time so the ENSDF value keeps the correct upper and lower bounds. Example: -0.27$_{-0.04}^{+0.03}$ becomes +0.27$_{+0.04}^{-0.03}$ in ENSDF.
+#### Extended 6-Column Uncertainty Fields (DT, DMR)
+
+- **Field** (cols 50–55): 6 characters, left-justified, with space padding if fewer than 6 characters.
+    - Symmetric: `"14    "` (1 or 2 digits + 5 or 4 spaces).
+    - Asymmetric: `"+3-4  "` (2 spaces), `"+19-8 "` (1 space), `"+13-28"` (no spaces).
+    - Limit markers: `"GT    "`, `"LT    "` (two letters + 4 spaces).
+- For source data using the Rose and Brink (1967) sign convention, reverse the sign of the mixing ratio value before entering it into ENSDF. Reverse the asymmetric uncertainty order at the same time so the ENSDF value keeps the correct upper and lower bounds. Example: -0.27$_{-0.04}^{+0.03}$ becomes +0.27$_{+0.04}^{-0.03}$ in ENSDF.
 
 
 **Critical Formatting Rules:**
--   Single digits in 2-column fields: MUST be padded with trailing space.
--   Double digits in 2-column fields: Fill both columns completely.
--   Asymmetric uncertainties: Use +X-Y format in 6-character fields (DT, DMR).
--   **FORBIDDEN:** "123" not allowed in either 2-column fields (corrupts adjacent data) or in 6-column fields.
--   **Rounding carry-over:** When 1 sig fig rounding carries to the next decimal place (e.g., ±0.0098 → ±0.010), the field value is `10` and the main value rounds to 3 decimal places. This `10` represents ±0.010 at 3dp precision, not 2 significant figures.
+- Single digits in 2-column fields: MUST be padded with trailing space.
+- Double digits in 2-column fields: Fill both columns completely.
+- Asymmetric uncertainties: Use +X-Y format in 6-character fields (DT, DMR).
+- **FORBIDDEN:** `123` is not allowed in either 2-column fields (corrupts adjacent data) or in 6-column fields.
+
 
 #### Scientific Notation Format
 
 For intensities and other values in scientific notation:
--   **Standard format:** `(5.6±1.0)×10^-4` becomes `5.6E-4 10` in ENSDF.
--   **Value field:** Use `E-n` notation (e.g., `5.6E-4`).
--   **Uncertainty field:** Use digits representing the last significant digit (e.g., `10` for ±1.0 if value is one decimal place).
--   **Examples:**
-    -   `(1.1±0.3)×10^-6` → Value: `1.1E-6`, Uncertainty: `3`.
-    -   `(76±20)×10^-6` → Value: `76E-6`, Uncertainty: `20`.
-    -   `(3.3±1.2)×10^-4` → Value: `3.3E-4`, Uncertainty: `12`.
--   **NEVER use:** `×10^-n` notation directly in ENSDF records.
--   **ALWAYS use:** `E-n` notation for the value with a separate uncertainty field.
+- **Standard format:** `(5.6±1.0)×10^-4` becomes `5.6E-4 10` in ENSDF.
+- **Value field:** Use `E-n` notation (e.g., `5.6E-4`).
+- **Uncertainty field:** Use digits representing the last significant digit (e.g., `10` for ±1.0 if the value has one decimal place).
+- **Examples:**
+    - `(1.1±0.3)×10^-6` → Value: `1.1E-6`, Uncertainty: `3`.
+    - `(76±20)×10^-6` → Value: `76E-6`, Uncertainty: `20`.
+    - `(3.3±1.2)×10^-4` → Value: `3.3E-4`, Uncertainty: `12`.
+- **NEVER use:** `×10^-n` notation directly in ENSDF records.
+- **ALWAYS use:** `E-n` notation for the value with a separate uncertainty field.
 
 #### GT and LT Markers in Uncertainty Fields
 
--   **LT** = "Less Than" (e.g., `<1.6 ps` becomes `1.6 PS    LT` in T and DT fields).
--   **GT** = "Greater Than" (e.g., `>5.2 fs` becomes `5.2 FS   GT` in T and DT fields).
--   **Format:** Value in main field, GT/LT marker in uncertainty field.
--   **Examples for RI and DRI:**
-    -   `<1.6` → RI=`1.6    ` (cols 23-29), DRI=`LT` (cols 30-31).
-    -   `>5.2` → RI=`5.2    ` (cols 23-29), DRI=`GT` (cols 30-31).
+- **LT** = "Less Than" (e.g., `<1.6 ps` becomes `1.6 PS    LT` in T and DT fields).
+- **GT** = "Greater Than" (e.g., `>5.2 fs` becomes `5.2 FS   GT` in T and DT fields).
+- **Format:** Place the value in the main field and the GT/LT marker in the uncertainty field.
+- **Examples for RI and DRI:**
+    - `<1.6` → RI=`1.6    ` (cols 23–29), DRI=`LT` (cols 30–31).
+    - `>5.2` → RI=`5.2    ` (cols 23–29), DRI=`GT` (cols 30–31).
 
 ### Uncertainty Format in Comment Lines
 
-#### In Comment Lines (cL, cG, General Comments)
+#### General Format
 
 Format: Use `{In}` or `{I+n-m}` notation with braces.
 
 **CRITICAL:** n must be INTEGER ONLY (NEVER decimals like `{I0.1}` or `{I1.1}`).
 
--   **Symmetric:** `{In}` (e.g., `{I7}`, `{I11}`) without plus/minus signs.
--   **Asymmetric:** `{I+n-m}` (e.g., `{I+10-11}`, `{I+7-9}`) with plus/minus signs.
--   **FORBIDDEN:** `{I+n}` for symmetric uncertainties (incorrect format).
-
-**Comment Line {In} Examples by Decimal Places:**
-
-| Value Decimals | Comment Notation | Meaning (± format) |
-| :--- | :--- | :--- |
-| 0 decimals | `1234 {I5}` | 1234 ± 5 |
-| 0 decimals | `1234 {I26}` | 1234 ± 26 |
-| 1 decimal | `12.3 {I6}` | 12.3 ± 0.6 |
-| 1 decimal | `3.6 {I11}` | 3.6 ± 1.1 |
-| 2 decimals | `1.23 {I7}` | 1.23 ± 0.07 |
-| 2 decimals | `1.23 {I21}` | 1.23 ± 0.21 |
-| 4 decimals | `0.0060 {I24}` | 0.0060 ± 0.0024 |
-
-**Critical Rules for {In} in Comments:**
--   `{In}` applies to the last significant digit of the value.
--   For 1 decimal: `{I11}` means ±11 in last digit = ±1.1.
--   For 2 decimals: `{I21}` means ±21 in last two digits = ±0.21.
--   **FORBIDDEN:** `{I0.1}`, `{I1.1}`, `{I2.7}` (decimals violate ENSDF rules).
+- **Symmetric:** `{In}` (e.g., `{I7}`, `{I11}`) without plus/minus signs.
+- **Asymmetric:** `{I+n-m}` (e.g., `{I+10-11}`, `{I+7-9}`) with plus/minus signs.
 
 #### Scientific Notation Format
-In comment lines, scientific notation uses `{In}` for uncertainties:
--   **Examples:** `(5.6±1.0)×10^-4` becomes `5.6|*10{+-4} {I10}` in comments.
--   **Value:** `5.6E-4`
--   **Uncertainty:** `{I10}` (±1.0 in last digit).
--   **Examples:** `(1.1±0.3)×10^6` becomes `1.1|*10{+6} {I3}` in comments.
--   **Value:** `1.1E6`
--   **Uncertainty:** `{I3}` (±0.3 in last digit).
 
-#### Uncertainty Notation with units
+In comment lines, scientific notation uses `{In}` for uncertainties:
+
+- **Example 1:** `(5.6±1.0)×10^-4` becomes `5.6|*10{+-4} {I10}` in comments.
+    - **Value:** `5.6E-4`
+    - **Uncertainty:** `{I10}` (±1.0 in last digit).
+- **Example 2:** `(1.1±0.3)×10^6` becomes `1.1|*10{+6} {I3}` in comments.
+    - **Value:** `1.1E6`
+    - **Uncertainty:** `{I3}` (±0.3 in last digit).
+
+#### Uncertainty Notation with Units
+
 Units are placed after the value before the uncertainty:
+
+```text
  35CL  cL $|w|g=3.6 eV {I11} (1972Hu10)
  34S   cL $|t=54 fs {I+18-11} (1980Be15)
+```
 
 
 **Examples in Context:**
--   Data record: ` 35P   L 1572.0    12 3/2+             2.29 PS   14` (uncertainties are plain numbers).
--   Comment line: ` 35CL  cL $|w|g=3.6 eV {I11} (1972Hu10)` (uncertainty uses `{I11}` notation).
+- Data record: ` 35P   L 1572.0    12 3/2+             2.29 PS   14` (uncertainties are plain numbers).
+- Comment line: ` 35CL  cL $|w|g=3.6 eV {I11} (1972Hu10)` (uncertainty uses `{I11}` notation).
 
 ---
 

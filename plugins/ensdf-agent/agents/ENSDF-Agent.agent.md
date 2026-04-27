@@ -198,11 +198,14 @@ ENSDF file modifications require human expert review. VS Code's inline diff view
 
 #### Forbidden Patterns (Bypass Diff Viewer)
 
-- Bash/shell scripts that apply bulk changes atomically.
-- Python scripts that modify .ens files via os/subprocess operations.
-- `git restore` or `git checkout` for error recovery.
-- Automated tooling that circumvents the VS Code diff interface.
-- Any modification method that prevents human review before commit.
+- `git restore` or `git checkout` for `.ens` file error recovery.
+- Any tooling or action on .ens files that circumvents the VS Code diff interface or prevents human review before commit.
+
+Temp scripts or code in temp folders are not part of this restriction. Those may be restored or checked out only when the command explicitly targets temp paths and does not touch any `.ens` file.
+
+If a hook denies `git restore` or `git checkout`, treat that as expected policy enforcement.
+Read the denial reason, do not retry with alternate Git syntax, and continue with
+diff-aware repair using `replace_string_in_file` or `multi_replace_string_in_file`.
 
 The diff viewer catches AI errors before they corrupt the nuclear data files. Bypassing it eliminates the human safeguard layer entirely.
 
@@ -214,14 +217,14 @@ When an edit introduces errors:
 3. Validate with `column_calibrate.py` and `ensdf_1line_ruler.py`.
 4. Let the user review diffs before accepting changes.
 
-Nuclear data tasks require high-precision work, not typical software development tasks. Do NOT use `git restore` or `git checkout` to fix mistakes. You must identify and fix errors carefully to maintain absolute rigor.
+Editing tasks on `.ens` nuclear data files requires high-precision work, not typical software development tasks. Do NOT use `git restore` or `git checkout` to fix `.ens` mistakes. You must identify and fix errors carefully to maintain absolute rigor.
 
 ## Agentic Learning Loop
 
-After completing the required tasks, carefully reflect on how agent skills have been applied and any new insights or lessons learned that could be incorporated into Standard Operating Procedures.
+After completing the required tasks, carefully reflect on how agent skills have been applied, along with any new insights or lessons learned that could be incorporated into Recommended Operating Procedures.
 
 - Update, refine, or revise relevant `SKILL.md` files as needed. Avoid rewriting the entire document; focus on essential patches.
-- Keep `SKILL.md` files well-structured, organized, and concise (<90 lines).
+- Keep `SKILL.md` files well-structured, organized, and concise (<80 lines).
 - Ensure skills are generalizable for a range of similar tasks, avoiding overly specific or detailed content.
 - Avoid verbose repetition of ENSDF rules and conventions. Reference `.github\copilot-instructions.md` for rules and conventions.
 
@@ -230,7 +233,7 @@ After completing the required tasks, carefully reflect on how agent skills have 
 
 ### Numerical Exactness
 
-Extract and enter numbers exactly as provided in source data, without approximation, rounding, truncation, padding, omission, alteration of digits and decimal places, or inference of values, uncertainties, or signs. For example, write -10.0 as -10.0, not -10, -10.00, 10.0, or +10.0.
+Extract and enter numbers exactly as provided in source data, without approximation, rounding, truncation, padding, omission, alteration of digits and decimal places, or inference of values, uncertainties, or signs. For example, -10.0 must be -10.0, not -10, -10.00, -10.01, 10.0, or +10.0.
 
 ### ENSDF Uncertainty Notation
 

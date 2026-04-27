@@ -18,40 +18,41 @@ ENSDF 80-column data record and field definitions, structural rules, column posi
 ### Field Mapping *(source → ENS)*
 - `[Data A]` → `[record type]` `[field name]`
 - `[Data B]` → `[record type]` `[field name]`
+- `[Data C]` → `[record type]` `[comment]`
+
+### Matching
+- L-records: `[ ]` exact E  `[ ]` E within ±[N] keV
+- G-records: `[ ]` exact Eγ  `[ ]` Eγ within ±[N] keV  `[ ]` matching parent Level first, matching then γ
 
 ### Operations
-- **Keep** `[field]` from target (e.g., M, MR, DMR; cG M$ comments)
+- **Keep** `[field]` already in target (e.g., M, MR, DMR; cG M$ comments)
 - **Replace/Update** `[field]` with source value (e.g., RI, DRI)
 - **Add/Insert** `[field]` from source (e.g., new G-records absent in target)
 - **Merge/Combine** `[field]` from both (e.g., cG RI$ comments quoting both)
 - **Average** `[field]` across sources (e.g., weighted average of RI)
 
-### Matching
-- L-records: `[ ]` exact E  `[ ]` E within ±[N] keV
-- G-records: `[ ]` exact Eγ  `[ ]` Eγ within ±[N] keV  `[ ]` parent L first, then Eγ
-
 ### Special Handling
 - `[ ]` [describe non-standard cases]
 
 
-## Workflow
+## Recommended Operating Procedure:
 
 ```
-Reconciling Procedure:
 - [ ] 1. Task Customization & Configuration confirmed
 - [ ] 2. Source data parsed and mapped
 - [ ] 3. Target fields to keep captured
 - [ ] 4. Records matched (log unmatched cases)
 - [ ] 5. Operations applied (replace / keep / add / merge / average)
-- [ ] 6. Per-line ruler validation — every edited line exit code 0
-- [ ] 7. column_calibrate.py — exit code 0
-- [ ] 8. check_gamma_ordering.py — exit code 0
-- [ ] 9. Report issued
+- [ ] 6. Leverage coding, scripts, and programming tools when necessary to effectively deliver your data tasks.
+- [ ] 7. Per-line ruler validation — every edited line exit code 0
+- [ ] 8. column_calibrate.py — exit code 0
+- [ ] 9. check_gamma_ordering.py — exit code 0
+- [ ] 10. Report issued
 ```
 
 ### Step 1 — Confirm Task Configuration
 
-Resolve any ambiguity in one focused question. Do not proceed with an incomplete operation list or uncertain matching strategy.
+Resolve any ambiguity in one focused question. Do not proceed with an incomplete operation list or ambiguous matching strategy.
 
 ### Step 2 — Parse Source Data
 
@@ -59,7 +60,7 @@ Read source file and extract the fields specified in Task Configuration. For tab
 
 ### Step 3 — Capture Target Fields to Keep
 
-Read the target file and cache every field marked KEEP — exact character-for-character values. These must survive the reconciliation unchanged.
+Read the target file and cache every field marked KEEP — exact character-for-character values. Every digit, character, trailing zeros space, and location must not be touched when editing other fields.
 
 ### Step 4 — Match Records
 
